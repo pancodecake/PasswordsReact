@@ -1,0 +1,50 @@
+.side-popup{
+  box-shadow: 0px 6px 21px rgba(83, 92, 105, 0.15);
+  position: absolute;
+  right: -42px;
+  top: 19%;
+  z-index: 10;
+  background-color: #f7f8f9;
+
+  padding: 5px;
+  border-radius: 10px;
+  right: 4px;
+  top: 22%;
+    .triangle{
+        top: -5px;
+  right: 9px;
+  -webkit-box-shadow: -6px 6px 21px rgba(83, 92, 105, 0.3);
+  box-shadow: -6px 6px 21px rgba(83, 92, 105, 0.3);
+    }
+
+
+    padding: 5px;
+    border-radius: 10px;
+    button:hover{
+    
+        background: #c6eefc;
+      
+    }
+    button{
+        display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px 10px;
+  color: #525c69;
+  font-size: 10px;
+  font-weight: 400;
+  text-decoration: none;
+  background:  $light;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  position: relative;
+  text-align: start;
+  width: 100%;
+  svg{
+    width: 10px;
+  height: 10px;
+  margin-right: 7px;
+  }
+    }
+}

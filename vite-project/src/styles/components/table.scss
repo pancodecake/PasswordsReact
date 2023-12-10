@@ -1,0 +1,118 @@
+
+.table {
+  border-color: red;
+  background-color:$light;
+  border-radius: 10px;
+  padding: 15px 12px;
+  &-row {
+    &__password {
+      display: flex;
+      svg {
+        width: 16px;
+        margin-left: 12px;
+      }
+    }
+    border-bottom: 2px solid #c6cdd3;
+
+    .table-row__con {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      display: grid;
+      grid-template-columns: 18% 23% 13% 18% 18% 9% 1%;
+      position: relative;
+
+      padding: 14px 0;
+      color: #525c69;
+    }
+    .table-eye {
+      margin-left: 11px;
+      margin-right: 11px;
+    }
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &-head {
+    display: grid;
+    grid-template-columns: 18% 23% 13% 18% 18% 13% 1%;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #c6cdd3;
+    color: $gray;
+    &__titles {
+      white-space: nowrap;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 19px;
+      color: #525c69;
+      svg {
+        margin-left: 5px;
+      }
+    }
+  }
+  &-rows:not(:last-child) {
+    margin-bottom: 17px;
+  }
+  &-pagination > *:not(:last-child) {
+    margin-right: 14px;
+  }
+  &-pagination {
+    display: flex;
+    align-items: center;
+
+    &__nums {
+      color: $blue;
+      font-weight: 600;
+      font-size: 11px;
+
+      word-spacing: 15px;
+    }
+    &__title {
+      font-weight: 700;
+      font-size: 11px;
+      line-height: 15px;
+      color: #848b94;
+    }
+    &__pag > *:not(:last-child) {
+      margin-right: 14px;
+    }
+    &__pag {
+      display: flex;
+      align-items: center;
+      color: $blue;
+      font-weight: 700;
+      font-size: 11px;
+      line-height: 15px;
+      .prev-arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+.history_table {
+  max-width: 100%;
+  .table-head {
+    display: block;
+    div {
+      display: grid;
+      grid-template-columns: repeat(3, 10%);
+      grid-column-gap: 30%;
+    }
+  }
+
+  .table-row {
+    div {
+      display: grid;
+      grid-template-columns: repeat(3, 10%);
+      grid-column-gap: 30%;
+    }
+  }
+  .password_table {
+    button {
+      h3 {
+        border: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+header {
+
+  padding: 0 26px 11px 26px;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  .header-con {
+    height: 100%;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+  }
+  .header-btns{
+    display: flex;
+    justify-content: space-between;
+   
+  }
+  // .header-btns >*:last-child{
+  //   margin-left: 10px;
+  // }
+
+  .header-pages {
+    display: flex;
+    position: relative;
+    height: 100%;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-start;
+    margin-top: 17px;
+ 
+   
+    transition: transform 0.3s ease-in-out;
+    h3{
+     
+    }
+    &__current {
+      color: $blue;
+      border-bottom: 2px solid $blue;
+      padding-bottom: 15px; 
+      margin: 0;
+      position: relative;
+      z-index: 1;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 20px;
+    }
+    &__prev{
+      position: absolute;
+      top: -3px;
+      right: 100%;
+      display: flex;
+      align-items: center;
+      padding: 3px;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 20px;
+      
+  //     border: 1px solid #c6cdd3;
+  // border-radius: 5px;
+  z-index: 0;
+      &__title{
+       
+        color: $blue;
+        opacity: 0.5;
+      } 
+    }
+
+      svg{
+        width: 10px;
+  height: 10px;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+   margin-top: 3px;
+  margin-right: 1px;
+  filter: invert(22%) sepia(54%) saturate(4087%) hue-rotate(196deg) brightness(94%) contrast(106%);
+  opacity: 0.5;
+      }
+     
+    
+  }
+  .settings{
+    transition: transform 0.7s ease-in-out;
+
+  }
+  .settings:hover{
+    transform: rotate(180deg);
+  }
+  .header-inputs {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+ 
+    &__con {
+     
+      display: flex;
+      color: #979797;
+      border: 1px solid #c6cdd3;
+      border-radius: 17px;
+      padding: 5px 16px;
+      margin-right: 21px;
+    }
+    input {
+     
+       width: 310px;
+       
+      border: none;
+      opacity: 40%;
+      outline: none;
+      background-color: transparent;
+      color: #979797;
+    }
+  }
+}

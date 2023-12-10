@@ -1,0 +1,77 @@
+.accordion {
+  &__body {
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    height: max-content;
+    // transition:  transform 0.3s ease-in-out
+  }
+  &-arrow {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &-head {
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
+    padding: 0 10px 13px 10px;
+
+    h2 {
+      color:$light;
+      font-weight: 300;
+      font-size: 27px;
+      line-height: 37px;
+    }
+    &__btns {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      button{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+        color:$light;
+        svg {
+          height: 17px;
+          margin-right: 6px;
+          margin-left: 14px;
+        }
+      }//accordion-head__btns__span
+      &-con {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.1490196078);
+        border-radius: 30px;
+        padding: 8px 16px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin-right: 20px;
+        white-space: nowrap;
+        span:first-of-type {
+          padding-right: 15px;
+          border-right: 1px solid rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+  }
+}
+.accordion:not(:last-child) {
+  margin-bottom: 11px;
+}

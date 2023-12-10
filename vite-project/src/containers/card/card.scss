@@ -1,0 +1,70 @@
+.card-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 248px);
+  grid-gap: 15px;
+}
+.card{
+  position: relative;
+    background-color:$light;
+  border-radius: 8px;
+  padding: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transition: 0.5s opacity ease-in, 0.5s height ease-in-out;
+  transition: 0.5s opacity ease-in, 0.5s height ease-in-out;
+  position: relative;
+  &-head{
+    display: flex;
+    &__box{
+        width: 46px;
+  height: 46px;
+  background-color: #90BE00;
+  border-radius: 8px;
+  margin-right: 10px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-bottom: 6px;
+    }
+    &__title{
+        font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 135px;
+  margin-right: 15px;
+  color: #525C69;
+    }
+    .modal-container{
+
+  position: absolute;
+  right: 12px;
+  top: 6%;
+
+  .btn-modal{
+    width: 16px;
+    height: 16px;
+  }
+    }
+  }
+  &-owner{
+    margin-bottom: 13px;
+  }
+  h4{
+    color: #848B94;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase; 
+}
+p{
+    color: #525C69;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+}
+  
+}

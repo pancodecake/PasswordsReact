@@ -1,0 +1,32 @@
+.popup{
+  
+    position: absolute;
+
+    z-index: 100;
+
+
+    border-radius: 10px;
+  
+    &__title{
+      text-align: center;
+      margin-bottom: 22px;
+      
+    }
+    &__btns {
+      display: flex;
+      justify-content: center;
+      &__btn {
+        padding: 10px 15px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        letter-spacing: 0px;
+        text-align: left;
+        border: none;
+        border-radius: 2px;
+      }
+      &__btn:first-child {
+        background-color: #2fc6f6;
+      }
+    }
+  }

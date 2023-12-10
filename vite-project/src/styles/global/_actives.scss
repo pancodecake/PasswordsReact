@@ -1,0 +1,68 @@
+$scale:1;
+$addScale:$scale + 0;
+$rotate:0;
+$addRotate:$rotate + 0;
+.accordion__body.closed{
+     opacity: 0;
+     height: 0!important;
+     animation: 0.3s accordionClosed;
+}
+.accordion__body.open{
+    
+     animation: 0.3s accordionOpen;
+}
+.select-input__item.open > div:first-child{
+   
+
+	-webkit-animation: slide-rotate-hor-t-fwd 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
+	        animation: slide-rotate-hor-t-fwd 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
+
+  
+}
+.select-input__item.closed > div:first-child{
+        -webkit-animation: slide-rotate-hor-t-fwd 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+                animation: slide-rotate-hor-t-fwd 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;         
+}
+.accordion-arrow{
+
+    // transform: rotate($rotate) scale($scale)
+}
+.arrow.active{
+  rotate:180deg
+}
+.accordion-head__btns__span.borderless{
+    border: none!important;
+    padding: 0!important;
+}
+ .popup.open > *{
+     -webkit-animation: scale-up-center 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+     animation: scale-up-center 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+ }
+ .popup.closed > *{
+     -webkit-animation: scale-down-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+     animation: scale-down-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+ }
+  .popup.open{
+      -webkit-animation: scale-up-center 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+      animation: scale-up-center 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+  }
+  .popup.closed{
+      -webkit-animation: scale-down-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      animation: scale-down-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+.cover-dark.on{
+    opacity: 0.2;
+}
+.cover-dark.off{
+    opacity: 0;
+    pointer-events: none;
+}
+.side-popup.open{
+    -webkit-animation: slide-rotate-hor-t-fwd 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
+    animation: slide-rotate-hor-t-fwd 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
+
+}
+.side-popup.closed{
+    -webkit-animation: slide-rotate-hor-t-fwd 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: slide-rotate-hor-t-fwd 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;         
+}

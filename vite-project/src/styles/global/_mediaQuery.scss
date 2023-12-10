@@ -1,0 +1,80 @@
+@mixin mobile {
+  @media screen and (max-width:320px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width:600px) {
+    @content;
+  }
+}
+
+@mixin mid {
+  @media screen and (max-width:774px) {
+    @content;
+  }
+
+}
+
+@mixin large {
+  @media screen and (max-width:1149px) {
+    @content;
+  }
+}
+
+@include mid {
+  #desc{
+    flex-basis: 80px;
+  }
+  .table-head__title{
+    font-size: 10px;
+line-height: 14px
+  }
+  .table-row{
+
+    .table-row__con{
+      font-size: 10px;
+  line-height: 16px;
+  text-wrap: wrap;
+    }
+  }
+  .header-description>div:first-of-type {
+    width: 105px;
+  }
+
+  .header-description>div:last-child {
+    width: 215px;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 208px);
+    grid-gap: 15px;
+  }
+}
+
+@include small {
+  .accordion-head__btns {
+    .accordion-head__btns-con {
+      padding: 6px  12px;
+      .accordion-head__btns__span {
+        font-size: 14px;
+        padding-right: 7px;
+      }
+    }
+
+    &__btn {
+      svg {
+        width: 14px;
+        height: 14px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  #header-input {
+    width: 150px;
+
+  }
+}
