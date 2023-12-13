@@ -12,9 +12,15 @@ header {
     justify-content: space-between;
 
   }
+  .modal-main{
+    .triangle{
+      rotate: 274deg;
+    }
+  }
   .header-btns{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .side-popup{
       right: -2px;
       top: 92%;

@@ -6,13 +6,13 @@ import React, {
   useCallback,
   useId,
 } from "react";
-import AccardionHead from "../../components/accordion/AccardionHead";
-import CheckList from "../../layouts/CheckList";
-import useComponentAmounts from "../../hooks/useComponentAmount";
+import AccardionHead from "./components/AccardionHead";
+
+import ComponentAmounts from "../../functions/ComponentAmount";
 import useWindowWidthChange from "../../hooks/useWindowWidthChange";
 import usePreventDoubleRenderEffect from "../../hooks/usePreventDoubleRenderEffect";
-import usePopupCompiler from "../../hooks/popupHooks/usePopupCompiler";
-import ModalComponent from "../../components/modalComponent";
+import RemoveModalAnimations from "../../hooks/RemoveModalAnimations";
+
 
 
 function accordion(param) {
@@ -20,12 +20,19 @@ function accordion(param) {
   const accordionConRef = useRef()
   const [active, setActive] = useState(true);
   const compType = param.accordionComponents.get("body");
-  let popupData = param.accordionComponents.get("popupsData")
-  let popups = param.accordionComponents.get("popups")
+  
   usePreventDoubleRenderEffect(() => {
     active ? (accordionBodyRef.current.className += "open") : "";
+    accordionBodyRef.current.className += 'initial-render'
+    const timeoutId = setTimeout(() => {
+      accordionBodyRef.current.classList.remove('initial-render');
+    }, 100); // Adjust the delay as needed
+
+    // Cleanup on unmount
+    return () => clearTimeout(timeoutId);
   }, [active]);
   usePreventDoubleRenderEffect(() => {
+    console.log(accordionBodyRef ,'accordionBodyRef ');
     setTimeout(() => {
       accordionBodyRef
         ? (accordionBodyRef.current.style.height = `${accordionConRef.current.getBoundingClientRect().height
@@ -55,14 +62,14 @@ function accordion(param) {
           <div
             ref={accordionConRef}
             className={`${param.accordionComponents.get("body").name?.toLowerCase()}-container`}>
- 
+
             {
-              useComponentAmounts(
+              ComponentAmounts(
                 param.accordionComponents.get("amount"),
                 compType,
                 param.accordionComponents.get("bodyContent"),
-                accordionBodyRef,
-                param.accordionComponents.get("title"),
+
+
               )}
           </div>
         </div>

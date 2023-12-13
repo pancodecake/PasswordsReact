@@ -1,27 +1,28 @@
 import React, { useRef, useEffect, useId } from "react";
 
-import TableRow from "../../layouts/table/TableRow";
+import TableRow from "./components/TableRow";
 import useWindowWidthChange from "../../hooks/useWindowWidthChange";
 import { ReactComponent as Arrow } from "@assets/Up.svg";
 import { ReactComponent as MoreSvg } from "@assets/icon-more.svg";
+import useGlobalContext from "../../context/GlobalContext";
+import TableTitleHiddenElements from "./components/TableTitleHiddenElements";
+import TableTitleWidth from "./function/TableTitleWidth";
+import TableTitles from "./components/TableTitles";
 
 
 
 
 function Table({data}) {
+
   const { headTitles,moreBtn,popups,popupsData, ...rowItems } = data;
   const tableRowTitleRef = useRef([]);
   const tableHeadTitleRef = useRef([]);
   const tablePagionationDOM = [];
   const tableRowsDOM = [];
-  
-  useEffect(() => {
-    for (let i = 0; i < tableRowTitleRef.current.length; i++) {
-      tableHeadTitleRef.current[i].style.marginRight = `${
-        tableRowTitleRef.current[i].getBoundingClientRect().width - tableHeadTitleRef.current[i].getBoundingClientRect().width
-      }px`;
-    }
-  }, [useWindowWidthChange()]);
+  const extraRowItem = moreBtn ? [moreBtn].length : 0
+  console.log(headTitles,rowItems,extraRowItem.length,'rowItemsmoreBtn');
+  const titleRowEquality = Object.values(headTitles).length ===  Object.values(rowItems).length + extraRowItem
+  TableTitleWidth(tableRowTitleRef.current,tableHeadTitleRef.current,titleRowEquality)
   for (let i = 0; i < 8; i++) {
     tablePagionationDOM.push(
       <button key={i} className="table-pagionation__num">
@@ -34,25 +35,13 @@ function Table({data}) {
       <TableRow key={i} moreBtn={moreBtn} popups={popups} popupsData={popupsData} ref={tableRowTitleRef} rowItems={rowItems} />
     );
   }
-  ////////////////////////////////////////////////////////////
-  const tableTitlesDOM = Object.values(headTitles).map((title, i) => {
-    return (
-      <span
-        key={title.name}
-        ref={(el) => (tableHeadTitleRef.current[i] = el)}
-        className="table-head__title"
-      >
-        <h4>{title.name}</h4>
-        {title.svg}
-      </span>
-    );
-  });
 
   return (
     <section className="table">
       <div className="table-head">
-        {tableTitlesDOM}
-        {<MoreSvg />}
+        <TableTitles titles={headTitles} ref={tableHeadTitleRef}/>
+        {titleRowEquality ? <TableTitleHiddenElements firstVal={ Object.values(rowItems).length} secondVal={Object.values(headTitles).length} item={<MoreSvg/>} />
+        : <div className="table-hidden">{<MoreSvg/>}</div>}
       </div>
       <div className="table-rows">{tableRowsDOM}</div>
       <div className="table-pagination">

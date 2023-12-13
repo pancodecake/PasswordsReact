@@ -33,7 +33,7 @@
   .triangle{
     top: 9px;
     right: 0px;
-    rotate: 314deg;
+    rotate: 261deg;
   }
     }
     &__btns{
@@ -54,10 +54,7 @@
      
     }
     border-bottom: 2px solid #c6cdd3;
-    // display: grid;
-    // grid-auto-flow: column;
-    // grid: 3fr auto;
-    // grid-template-columns: 3fr
+
     .table-row__con {
       font-weight: 400;
       font-size: 14px;
@@ -78,7 +75,8 @@
     
     
   }
-  &-head > *:last-child{
+
+  &-hidden{
     max-width: 20px;
     visibility: hidden;
   }
@@ -98,9 +96,9 @@
       line-height: 19px;
       color: #525c69;
       svg {
-        position: absolute;
-        right: -26px;
-        top: -3px;
+        // position: absolute;
+        // right: -26px;
+        // top: -3px;
       }
     }
   

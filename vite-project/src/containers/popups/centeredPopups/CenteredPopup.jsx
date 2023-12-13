@@ -2,10 +2,10 @@ import React, { useEffect, useState,useId } from "react";
 import { ReactComponent as X } from "@assets/X.svg";
 import useGlobalContext from "../../../context/GlobalContext";
 import useFormData from "../../../hooks/useFormData";
-import usePopupContext from "../../../context/PopupContext";
+
 import FormComp from "../../../components/FormComp";
-import PopupDropAnimation from "../../../components/popup/PopupDropAnimation";
-import PopupBtns from "../../../components/popup/PopupBtns";
+import PopupDropAnimation from "../components/PopupDropAnimation";
+import PopupBtns from "../components/PopupBtns";
 import DarkCover from "../../../components/DarkCover";
 
 export default function CenteredPopup({data,tag,active,dataModal,className}) {

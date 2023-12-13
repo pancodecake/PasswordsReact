@@ -1,5 +1,5 @@
 import React from "react";
-import { headerDescDataMap } from "../data/headerData";
+import { headerDescDataMap } from "../../../data/headerData";
 
 function HeaderDesc() {
   let headerDescDOM = [];

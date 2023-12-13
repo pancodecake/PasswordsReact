@@ -1,5 +1,5 @@
 import React, { useReducer, useRef, useState } from "react";
-import CopyClipboard from "../functions/CopyClipboard";
+import CopyClipboard from "../../../functions/CopyClipboard";
 
 export default function useTablePassword(passwordParam, btns) {
   function passwordReducer(state, action) {

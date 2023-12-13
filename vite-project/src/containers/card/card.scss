@@ -5,9 +5,11 @@
 
 }
 
-
+.card  > .side-popup:first-of-type{
+  background-color: yellow;
+}
 .card {
-
+  overflow: hidden;
   position: relative;
   background-color: $light;
   border-radius: 8px;
@@ -22,11 +24,19 @@
   -webkit-transition: 0.5s opacity ease-in, 0.5s height ease-in-out;
   transition: 0.5s opacity ease-in, 0.5s height ease-in-out;
   position: relative;
-  
+  .modal-main{
+    .triangle {
+      left: 71%;
+      top: -3%;
+      rotate: 274deg;
+    }
+  }
   .side-popup {
-    right: -8px;
-    top: 93%;
-    
+    right: -7px;
+    top: 95%;
+  //   top: -1px;
+  // right: 9px;
+  // rotate: 183deg;
     [data-modal='Card move'] {
       top: -42%;
       right: 109%;
@@ -51,14 +61,11 @@
   }
   &-head {
     display: flex;
-    [data-modalCon="Project card"]{
+    [data-modalcon="Project card"]{
       position: absolute;
       right: 12px;
       top: 6%;
-    // [data-modalbtn="Project card"]{
-    //   width: 16px;
-    //   height: 16px;
-    //   }
+     
     }
     &__box {
       width: 46px;

@@ -13,7 +13,7 @@ import SidePopup from "../containers/popups/sidePopups/SidePopup";
 export const tableData = {
     headTitles: {
       name: {name:"Name", svg:<TableTitleSvg />},
-      desc: {name:"Desc", svg:<TableTitleSvg />},
+      desc: {name:"Description", svg:<TableTitleSvg />},
       login: {name:"Login", svg:<TableTitleSvg />},
       password: {name:"Password", svg:<TableTitleSvg />},
       url: {name:"Url", svg:<TableTitleSvg />},
@@ -33,9 +33,9 @@ export const tableData = {
   };
   export const historyTableData = {
     headTitles: {
-      desc: ["Description", <TableTitleSvg />],
-      changer: ["Changer", <TableTitleSvg />],
-      changegDate: ["Change date", <TableTitleSvg />],
+      desc: {name:"Description", svg:<TableTitleSvg />},
+      changer: {name:"User", svg:<TableTitleSvg />},
+      changeDate: {name:"Date Changed", svg:<TableTitleSvg />},
     },
     desc: "Access website by SSH",
     changer: "Mark Pancake",

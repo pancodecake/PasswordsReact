@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import useClosePopup from './popupHooks/useClosePopup'
+import useClosePopup from './useClosePopup'
+
 
 export default function useActivateModal(popupActive,setPopup,currentPopupTag,multiRef) {
  

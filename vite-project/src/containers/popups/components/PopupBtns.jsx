@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import usePopupContext from '../../context/PopupContext'
-import useGlobalContext from '../../context/GlobalContext'
+
+import useGlobalContext from '../../../context/GlobalContext'
 
 export default function PopupBtns(props) {
   const { setModalActive,setChildModalActive,modalActive,childModalActive } = useGlobalContext();

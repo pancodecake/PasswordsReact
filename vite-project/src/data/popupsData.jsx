@@ -60,24 +60,7 @@ export const  centeredPopupData = {
      website: { title: 'Website' },
    }
  }
-// export const sidePopupData = {
-//   cardMove: {title: ['My sections','Without sections']},
-//   settingsMove: {title: ['Active projects'], svg:[ <Dots />]
-//     // activeProjects: { title: 'Active projects', svg: <Dots /> },
-//     // myProjects: { title: 'My projects', svg: <Dots /> },
-//     // unactiveProjects: { title: 'Unactive projects', svg: <Dots /> }
-//   }, 
-//   tableMove: {
-//     passwords: { title: 'Active projects' },
-//     untiedPasswords: { title: 'My projects' },
-//   }, 
-//   tablePasswords: {
-//     passwords: { title: 'Active projects' },
-//     accessingSSH: { title: 'Accessing the site trough SSH' },
-//     website: { title: 'Website' },
-//   }
-// }
-   //projectCard
+
    export const projectCardPopupData = {
     title:'Project card',
     

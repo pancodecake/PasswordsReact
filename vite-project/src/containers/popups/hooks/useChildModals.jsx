@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
-import useMultiRefs from '../useMultiRefs'
-import useActivateModal from '../useActivateModal'
+import useMultiRefs from '../../../hooks/useMultiRefs'
+import useActivateModal from './useActivateModal'
 import useClosePopup from './useClosePopup'
 
 export default function useChildModals() {

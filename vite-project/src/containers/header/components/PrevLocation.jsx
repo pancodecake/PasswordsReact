@@ -1,8 +1,8 @@
 import React, { useImperativeHandle } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ReactComponent as Arrow } from "@assets/Up.svg";
-import useGlobalContext from "../context/GlobalContext";
-import { avabilePagesData } from "../data/accordionData";
+import useGlobalContext from "../../../context/GlobalContext";
+import { avabilePagesData } from "../../../data/accordionData";
 
 function PrevLocation(props,ref) {
   const { useBreadcrumbs } = useGlobalContext();

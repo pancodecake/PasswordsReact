@@ -1,7 +1,7 @@
 import React, { useId, useState,useEffect} from 'react'
-import PopupBtns from '../../../components/popup/PopupBtns';
-import usePopupContext from '../../../context/PopupContext';
-import PopupDropAnimation from '../../../components/popup/PopupDropAnimation';
+import PopupBtns from '../components/PopupBtns';
+
+import PopupDropAnimation from '../components/PopupDropAnimation';
 import useGlobalContext from '../../../context/GlobalContext';
 import DarkCover from '../../../components/DarkCover';
 

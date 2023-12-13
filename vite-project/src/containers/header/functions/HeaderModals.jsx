@@ -1,8 +1,9 @@
 import React from 'react'
-import ModalComponent from '../components/modalComponent'
-import SidePopup from '../containers/popups/sidePopups/SidePopup'
-import ChecklistModal from '../components/ChecklistModal'
-import { ChecklistsModalData, settingsPopupData } from '../data/popupsData'
+
+import SidePopup from '../../popups/sidePopups/SidePopup'
+import ChecklistModal from '../../../components/ChecklistModal'
+import { ChecklistsModalData, settingsPopupData } from '../../../data/popupsData'
+import ModalComponent from '../../popups/components/ModalComponent'
 
 export default function HeaderModals(modal,btnContent) {
 
