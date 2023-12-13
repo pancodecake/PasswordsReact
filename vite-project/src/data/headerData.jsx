@@ -9,7 +9,7 @@ const headerDescData = {
     owner: { title: "Owner", content: "Mark Pancake" },
     date: { title: "Date", content: "07.11.2022" },
     desc: {
-        title: "Description",
+    title: "Description",
     content: "Password storing website built on react",
     svg: <PencilSvg />,
     },

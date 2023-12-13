@@ -5,6 +5,7 @@ import React, { useContext, useRef, useState,useEffect } from "react";
 import useBreadcrumbs from "../hooks/useBreadcrumbs";
 import useSaveLocal from "../hooks/useSaveLocal";
 import useModals from "../hooks/popupHooks/useModals";
+import useChildModals from "../hooks/popupHooks/useChildModals";
 
 
 
@@ -13,7 +14,9 @@ const MainContext = React.createContext();
 export const MainProvider = ({ children }) => {
   const [formActive,setFormActive] = useState(false)
   const [formContent,setFormContent] = useSaveLocal({})
-  const {...modals} =  useModals()
+
+
+
 
 
  
@@ -25,7 +28,8 @@ export const MainProvider = ({ children }) => {
         setFormContent,
         formActive,
         setFormActive,
-        ...modals
+        ...useModals(),
+        ...useChildModals()
 
       }}
     >

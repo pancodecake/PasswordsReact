@@ -28,7 +28,12 @@
       font-size: 27px;
       line-height: 37px;
     }
+    &__btns-con > .modal-container:first-child{
+      padding-right: 15px;
+border-right: 1px solid rgba(255, 255, 255, 0.3);
+    }
     &__btns {
+
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;

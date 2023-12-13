@@ -1,5 +1,5 @@
 @mixin mobile {
-  @media screen and (max-width:320px) {
+  @media screen and (max-width:400px) {
     @content;
   }
 }
@@ -55,6 +55,9 @@ line-height: 14px
 }
 
 @include small {
+  .popup{
+    width: 80%;
+  }
   .accordion-head__btns {
     .accordion-head__btns-con {
       padding: 6px  12px;
@@ -72,9 +75,11 @@ line-height: 14px
       }
     }
   }
-
-  #header-input {
-    width: 150px;
-
+  header .header-inputs{
+    #header-input {
+      width: 150px;
+  
+    }
   }
+
 }

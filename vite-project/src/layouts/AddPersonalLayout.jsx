@@ -4,7 +4,7 @@ import { addPersonal } from "../data/data";
 export default function AddPersonalLayout() {
     const personalBodyDOM =  addPersonal.body.map((person,i) => {
      let [src,name] = person
-     console.log(src,name,'name');
+  
         return (
           <li key={name}>
           <span className="add-personal__list__item">

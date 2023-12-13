@@ -31,7 +31,8 @@ export default function PopupDropAnimation({children,active,popupClass}) {
     animate="visible"
     exit="exit"
     variants={popupDropIn}
-    className={`${popupClass}  center popup `}>
+    // className={`${popupClass}  center popup `}
+    >
     { children}
     </motion.div>}
     </AnimatePresence>

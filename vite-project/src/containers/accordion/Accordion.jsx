@@ -55,19 +55,7 @@ function accordion(param) {
           <div
             ref={accordionConRef}
             className={`${param.accordionComponents.get("body").name?.toLowerCase()}-container`}>
-            {console.log(popups, popupData, 'param.accordionComponents.get("popupsData")')}
-
-
-            {/* <ModalComponent modalComponents={popups} modalData={popupData}  />    */}
-            {/* {param.accordionComponents.has("popups") &&
-                usePopupCompiler(
-                  param.accordionComponents.get("popupsData"),
-                  param.accordionComponents.get("popups"),
-                  param.accordionComponents.get("title"),
-                  'accordionHead',
-                  param.accordionComponents.get("popupsData").length
-                )
-                }  */}
+ 
             {
               useComponentAmounts(
                 param.accordionComponents.get("amount"),

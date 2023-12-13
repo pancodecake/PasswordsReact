@@ -6,7 +6,6 @@ import ModalBtnHandler from "../../functions/ModalBtnHandler";
 import ModalComponent from "../modalComponent";
 
 function AccardionHead(props, ref) {
-  console.log(props.popupsData,props.popups,'props.popupsData,props.popups')
   const { setaccordionHeadPopupCurrentTag, setAccordionHeadPopupActive,accordionHeadPopup } = usePopupContext();
   const {setModalActive,setCurrentModal,modalTagRef} = useGlobalContext()
   // let {setaccordionHeadPopupCurrentTag, setAccordionHeadPopupActive,accordionHeadPopup,setAccordionHeadPopup,popupTagsRef} = centeredPopup
@@ -27,7 +26,7 @@ function AccardionHead(props, ref) {
       <div className="accordion-head__btns">
         {props.btns && props.btns.length !== 0 && (
           <div className="accordion-head__btns-con">
-            <ModalComponent modalComponents={props.popups} modalData={props.popupsData} BtnSvg={props.btns} />  
+            <ModalComponent modalComponents={props.popups} modalData={props.popupsData} btnContent={props.btns} />  
             {props.btns?.map((btn, i) => {
               return (              
                 <>

@@ -3,16 +3,17 @@ import PopupBtns from '../../../components/popup/PopupBtns';
 import usePopupContext from '../../../context/PopupContext';
 import PopupDropAnimation from '../../../components/popup/PopupDropAnimation';
 import useGlobalContext from '../../../context/GlobalContext';
+import DarkCover from '../../../components/DarkCover';
 
- function DeletePopup({data,tag,active}) {
+ function DeletePopup({data,tag,active,dataModal,className}) {
   const {addMultiRef} =  useGlobalContext()
-  const {btns,title} =  data
-
+  const {btns} =  data
+  
     return (
       <PopupDropAnimation active={active} popupClass={'popup-delete'}>
-      <div  popuptag={tag} ref={addMultiRef}  >
-        <h3 className='popup__title'>{title}</h3>
-        <PopupBtns  cancel={btns?.cancel} confirm={btns?.confirm} />
+      <div className={`popup-centered center popup ${className}`} data-modal={dataModal}  popuptag={tag} ref={addMultiRef}  >
+        <h3 className='popup__title'>{dataModal}</h3>
+        <PopupBtns className={className}  cancel={btns?.cancel} confirm={btns?.confirm} />
       </div> 
       </PopupDropAnimation>
     )

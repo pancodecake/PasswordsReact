@@ -9,6 +9,10 @@ import { ReactComponent as Documentplus } from "@assets/documentplus.svg";
 
 import Textarea from "../components/Textarea";
 import SelectInputComp from "../components/SelectInputComp";
+import SidePopup from "../containers/popups/sidePopups/SidePopup";
+import CenteredPopup from "../containers/popups/centeredPopups/CenteredPopup";
+import DeletePopup from "../containers/popups/deletePopups/DeletePopup";
+
 //inputs,btns, title
 export const  centeredPopupData = {
     addProject:{centered:true,title:'Add project',inputs:[{type:'text',name:'Name'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Add',cancel:'Cancel'}},
@@ -27,47 +31,93 @@ export const  centeredPopupData = {
 //     dltProject:{tag:'dltProject',active:false,title:'Are you sure you wana delete the project',btns:{confirm:'CONFIRM',cancel:'CANCEL'}},
 //     dltPassword:{tag:'dltPassword',active:false,title:'Are you sure you wana delete the password',btns:{confirm:'CONFIRM',cancel:'CANCEL'}}
 //   }
-export const childPopupData = {
 
-    cardMove:['My sections','Without sections'],
-    settingsMove:[[<Dots/>,'Active projects'],[<Dots/>,'My projects'],[<Dots/>,'Unactive projects']],
-    tableMove:['Passwords','Passwords without tie to a category'],
-    tablePasswords:['Passwords','Accessing the site trough SSH','Website','Accessing the site trough SSH'],
-  }
+ export const sidePopupData = {
+   cardMove: {
+     
+    title: 'Card move',
+     mySections: { title: 'My sections' },
+     withoutSections: { title: 'Without sections' }
+   },
+   settingsMove: {
+     
+    title: 'Settings move',
+     activeProjects: { title: 'Active projects', svg: <Dots /> },
+     myProjects: { title: 'My projects', svg: <Dots /> },
+     unactiveProjects: { title: 'Unactive projects', svg: <Dots /> }
+   }, 
+   tableMove: {
+     
+    title:'Table move',
+     passwords: { title: 'Passwords' },
+     untiedPasswords: { title: 'Passwords without a tie to the cathegory' },
+   }, 
+   tablePasswords: {
+     
+    title:'Table passwords',
+     passwords: { title: 'Active projects' },
+     accessingSSH: { title: 'Accessing the site trough SSH' },
+     website: { title: 'Website' },
+   }
+ }
+// export const sidePopupData = {
+//   cardMove: {title: ['My sections','Without sections']},
+//   settingsMove: {title: ['Active projects'], svg:[ <Dots />]
+//     // activeProjects: { title: 'Active projects', svg: <Dots /> },
+//     // myProjects: { title: 'My projects', svg: <Dots /> },
+//     // unactiveProjects: { title: 'Unactive projects', svg: <Dots /> }
+//   }, 
+//   tableMove: {
+//     passwords: { title: 'Active projects' },
+//     untiedPasswords: { title: 'My projects' },
+//   }, 
+//   tablePasswords: {
+//     passwords: { title: 'Active projects' },
+//     accessingSSH: { title: 'Accessing the site trough SSH' },
+//     website: { title: 'Website' },
+//   }
+// }
    //projectCard
    export const projectCardPopupData = {
+    title:'Project card',
     
-     redact:{svg:<SideSetting/>,title:'Redact',childPopup:centeredPopupData.redactProject},
-     move:{svg:<DoubleArrow/>,title:'Move',childPopup:childPopupData.cardMove},
-     delete:{svg:<Bin/>,title:'Delete',childPopup:centeredPopupData.dltProject},
+     redact:{svg:<SideSetting/>,title:'Redact',childPopups:{popupsData:[centeredPopupData.redactProject],popups:[CenteredPopup]}},
+     move:{svg:<DoubleArrow/>,title:'Move',childPopups:{popupsData:[sidePopupData.cardMove],popups:[SidePopup]}},
+     delete:{svg:<Bin/>,title:'Delete',childPopups:{popupsData:[centeredPopupData.dltProject],popups:[DeletePopup]}},
    }
    export const SSHCardPopupData = {
+    title:'SSH card',
     
-     redact:{svg:<SideSetting/>,title:'Redact',childPopup:centeredPopupData.redactCategory},
-     delete:{svg:<Bin/>,title:'Delete',childPopup:centeredPopupData.dltProject},
+     redact:{svg:<SideSetting/>,title:'Redact',childPopups:{popupsData:[centeredPopupData.redactCategory],popups:[CenteredPopup]}},
+     delete:{svg:<Bin/>,title:'Delete',childPopups:{popupsData:[centeredPopupData.dltProject],popups:[DeletePopup]}},
    }
    export const settingsPopupData = {
-  
-    move:{svg:<DoubleArrow/>,title:'Move',childPopup:childPopupData.cardMove},
-    createSection:{svg:<Documentplus/>,title:'Create section',childPopup:childPopupData.cardMove},
+    title:'settings',
+    
+    move:{svg:<DoubleArrow/>,title:'Move',childPopups:{popupsData:[sidePopupData.settingsMove],popups:[SidePopup]}},
+    createSection:{svg:<Documentplus/>,title:'Create section',childPopups:{popupsData:[centeredPopupData.createSection],popups:[CenteredPopup]}},
   
   }
   export const ChecklistsModalData = {
     inviteed:{
+        containerless:true,
         title:'Invite To Project',
         list:['Joe Doe','Matt Patt','Markiplayer Example','Felix Kindelberg','Seymen Satilmaz'],
+        btns:{confirm:'Save',cancel:'Cancel'}
     },
     allowAccess:{
+      containerless:true,
         title:'Allow Access',
         list:['Joe Doe','Matt Patt','Markiplayer Example','Felix Kindelberg','Seymen Satilmaz'],
+        btns:{confirm:'Save',cancel:'Cancel'}
     }
   }
    export const tablePopupData = {
-    tag:'tablePopup',
-     move:{svg:<DoubleArrow/>,title:'Move',childPopup:childPopupData.tableMove},
-     tie:{svg:<Chain/>,title:'Tie to a category',childPopup:childPopupData.tablePasswords},
-     redact:{svg:<Key/>,title:'Redact password',childPopup:centeredPopupData.redactPassword},
-     delete:{svg:<Bin/>,title:'Delete',childPopup:centeredPopupData.dltPassword},
+    title:'table',
+     move:{svg:<DoubleArrow/>,title:'Move',childPopups:{popupsData:[sidePopupData.tableMove],popups:[SidePopup]}},
+     tie:{svg:<Chain/>,title:'Tie to a category',childPopups:{popupsData:[sidePopupData.tablePasswords],popups:[SidePopup]}},
+     redact:{svg:<Key/>,title:'Redact password',childPopups:{popupsData:[centeredPopupData.redactPassword],popups:[CenteredPopup]}},
+     delete:{svg:<Bin/>,title:'Delete',childPopups:{popupsData:[centeredPopupData.dltPassword],popups:[DeletePopup]}},
    }
   
   

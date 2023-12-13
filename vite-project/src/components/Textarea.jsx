@@ -25,7 +25,7 @@ export default function Textarea(prop) {
         maxLength={areaLimit}
         value={formContent?.TEXTAREA}
         id={prop.label + textareaId}
-        onChange={(e) => useFormData(setFormContent ,e.target.tagName,e.target.value)}
+        onChange={(e) => useFormData(setFormContent ,e.target.tagName,e.target.value,e.target.type)}
         ref={textareaRef}
       ></textarea>     
     </>

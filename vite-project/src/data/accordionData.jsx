@@ -4,7 +4,7 @@ import { ReactComponent as FolderPlusSvg } from "@assets/folderplus.svg";
 import { ReactComponent as PagePlusSvg } from "@assets/pageplus.svg";
 import { ReactComponent as AccLockSvg } from "@assets/acclock.svg";
 import Card from "../containers/card/Card";
-import {Table} from "../containers/table/Table";
+import Table from "../containers/table/Table";
 import CenteredPopup from "../containers/popups/centeredPopups/CenteredPopup";
 import { centeredPopupData } from "./popupsData";
 import { SSHCardData, projectCardData,tableData,historyTableData } from "./accordionBodyData";

@@ -1,12 +1,13 @@
 import React, { useRef, useImperativeHandle } from "react";
 import { ReactComponent as MoreSvg } from "@assets/icon-more.svg";
 import useTablePassword from "../../hooks/useTablePassword";
+import ModalComponent from "../../components/modalComponent";
 
 
 function TableRow({ ...props }, ref) {
     let {password,btns} = props.rowItems.password
     
-   const tableTitleDOM = Object.values(props.rowItems).map((item, i, arr) => {
+   const tableTitleDOM = Object.values(props.rowItems).map((item, i) => {
      let passwordWidth =  ref.current[i]?.id === 'password' && ref.current[i].getBoundingClientRect().width;
      return (     
        <span
@@ -28,9 +29,10 @@ function TableRow({ ...props }, ref) {
     <div className="table-row ">
       <div className="table-row__con ">
         {tableTitleDOM} 
-        <button className="btn-modal">
+         <ModalComponent  modalComponents={props.popups} modalData={props.popupsData} btnContent={props.moreBtn} /> 
+        {/* <button className="btn-modal">
         {props.moreBtn}
-        </button>
+        </button> */}
       </div>
     </div>
   );

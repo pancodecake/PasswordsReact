@@ -45,7 +45,7 @@ export const tableData = {
     title: "New Project",
     owner: "Mark Pancake",
     date: "2020-01-01",
-    modalBtnSvg: <MoreSvg/>,
+    modalbtnContent: <MoreSvg/>,
     popupBtn:{name:'copy',svg:<DocumentCopySvg />},
     popups:[SidePopup],
     popupsData:[projectCardPopupData]
@@ -54,7 +54,7 @@ export const tableData = {
     title: "Access website trough SSH",
     owner: "Mark Pancake",
     date: "2020-01-01",
-    modalBtnSvg: <MoreSvg/>,
+    modalbtnContent: <MoreSvg/>,
     popups:[SidePopup],
     popupsData:[SSHCardPopupData]
   };

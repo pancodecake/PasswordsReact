@@ -3,16 +3,16 @@ import { NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { ReactComponent as SearchSvg } from "../../assets/search.svg";
 import useGlobalContext from "../../context/GlobalContext";
 import PrevLocation from "../../components/PrevLocation";
-import HeaderDesc from "./layouts/HeaderDesc";
+import HeaderDesc from "../../layouts/HeaderDesc.jsx";
 import Sections from "../../components/Sections";
-import LastPageStyle from "./functions/LastPageTrans";
+import LastPageStyle from "../../functions/LastPageTrans.js";
 import usePreventDoubleRenderEffect from "../../hooks/usePreventDoubleRenderEffect.jsx";
 import { navBtnDataMap } from "../../data/headerData.jsx";
 import ModalComponent from "../../components/modalComponent.jsx";
 import SidePopup from "../popups/sidePopups/SidePopup.jsx";
-import { settingsPopupData } from "../../data/popupsData.jsx";
-
-
+import { ChecklistsModalData, settingsPopupData } from "../../data/popupsData.jsx";
+import ChecklistModal from "../../components/ChecklistModal.jsx";
+import HeaderModals from "../../functions/HeaderModals.jsx";
 
 function Header(param) {
   const { useBreadcrumbs,modalTagRef } = useGlobalContext();
@@ -25,30 +25,17 @@ function Header(param) {
   const arr = [];
   const headerBtns = useRef();
   let totalwidth = 0;
-  console.log(modalTagRef.current?.tag,'modalTagRef.current?.tag');
   usePreventDoubleRenderEffect(() => {
     LastPageStyle(location, pagesRef, prevTitleRef);
     for (let [key, value] of navBtnDataMap.get(location)) {
+
       key === "history"
         ? arr.push([
             <NavLink ref={(el) => btnRef.current.push(el)} to={key}>
               {value}
             </NavLink>,
           ])
-        : arr.push([
-            // <button
-            //   key={key}
-            //   ref={(el) => btnRef.current.push(el)}
-            //   className={`header-btn ${key}`}
-            //   popuptag={modalTagRef.current?.tag}
-            // >
-               <ModalComponent key={key}  modalComponents={[SidePopup]} modalData={[settingsPopupData]} BtnSvg={value}  />  
-              // {value}
-              
-            // </button>
-            // 
-            ,
-          ]);
+        : arr.push([HeaderModals(key,value)]);
     }
     setHeaderBtn(arr);
   }, [location]);

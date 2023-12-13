@@ -24,21 +24,21 @@ function Table({data}) {
   }, [useWindowWidthChange()]);
   for (let i = 0; i < 8; i++) {
     tablePagionationDOM.push(
-      <a key={i} href="#" className="table-pagionation__num">
+      <button key={i} className="table-pagionation__num">
         {i}
-      </a>
+      </button>
     );
   }
   for (let i = 0; i < 5; i++) {
     tableRowsDOM.push(
-      <TableRow key={i} moreBtn={moreBtn} ref={tableRowTitleRef} rowItems={rowItems} />
+      <TableRow key={i} moreBtn={moreBtn} popups={popups} popupsData={popupsData} ref={tableRowTitleRef} rowItems={rowItems} />
     );
   }
   ////////////////////////////////////////////////////////////
   const tableTitlesDOM = Object.values(headTitles).map((title, i) => {
     return (
       <span
-        key={title}
+        key={title.name}
         ref={(el) => (tableHeadTitleRef.current[i] = el)}
         className="table-head__title"
       >
@@ -74,4 +74,4 @@ function Table({data}) {
   );
 }
 
-export  {Table};
+export default  Table;

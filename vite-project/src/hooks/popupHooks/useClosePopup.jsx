@@ -8,11 +8,14 @@ export default function useClosePopup(popupActive, setPopupActive,multiRef) {
 
   usePreventDoubleRenderEffect(() => {
     const elements = multiRef()
-    console.log(elements,'elements ');
-    const handler = (event) => {
-//
-      return elements.every(popRef => !popRef?.contains(event.target) && event.target.closest('.popup') === null && event.target.closest('.btn-modal') === null) && setPopupActive(false) + console.log('closed');
 
+    const handler = (event) => {
+      event.stopPropagation()
+      event.preventDefault()
+      event.target.closest('.popup') !== null && event.preventDefault()
+      console.log( event.target.closest('.popup') !== null && event.target,'event.target');
+  //  return elements.every(popRef => !popRef?.contains(event.target) && event.target.closest('.popup') === null && event.target.closest('.btn-modal') === null) && setPopupActive(false) + console.log('closed');
+      return event.target.closest('.popup') === null && event.target.closest('.btn-modal') === null && setPopupActive(false)
     }
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)

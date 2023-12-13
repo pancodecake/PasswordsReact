@@ -10,14 +10,9 @@ export default function useModals() {
     const modalTagRef = useRef()
     const currentPopupRef = useRef([])
     const [multiRef,addMultiRef] = useMultiRefs()
-    
-    useEffect(() => {
-    
-    console.log(multiRef(),'elements');
 
-    },[])
-    console.log(modal,'kek');
-    useActivateModal(modalActive,setModal,currentModal,setModalActive,multiRef)
+
+    useActivateModal(modalActive,setModal,currentModal,multiRef)
     useClosePopup(modalActive,setModalActive,multiRef)
      //popupActive,setPopup,currentPopupTag,setPopupActive
     return {currentPopupRef,currentModal,setCurrentModal,modal,setModal,modalActive,setModalActive,modalTagRef,addMultiRef}

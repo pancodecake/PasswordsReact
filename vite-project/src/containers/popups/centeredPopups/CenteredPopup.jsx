@@ -6,14 +6,14 @@ import usePopupContext from "../../../context/PopupContext";
 import FormComp from "../../../components/FormComp";
 import PopupDropAnimation from "../../../components/popup/PopupDropAnimation";
 import PopupBtns from "../../../components/popup/PopupBtns";
+import DarkCover from "../../../components/DarkCover";
 
-export default function CenteredPopup({data,tag,active}) {
-  const {formContent,setFormContent,currentPopupRef,addMultiRef,setModalActive} = useGlobalContext()
-  // const {setAccordionHeadPopupActive} = usePopupContext()
+export default function CenteredPopup({data,tag,active,dataModal,className}) {
+  const {formContent,setFormContent,currentPopupRef,addMultiRef,setModalActive,setChildModalActive} = useGlobalContext()
+ 
   if (data) {
-    //inputs, btns,, title, ...rest
     const { inputs,btns,centered, title, ...rest } = data 
-    console.log(rest,'rest');
+
     const restDOM = Object.values(rest).map((el,i) => {
       return (<li key={i} className="form__item">{el}</li>)
     })
@@ -23,7 +23,7 @@ export default function CenteredPopup({data,tag,active}) {
           <label htmlFor={input.name}>{input.name}</label>
           <input
             onChange={(e) =>
-              useFormData(setFormContent,input.name,e.target.value)
+              useFormData(setFormContent,input.name,e.target.value,e.target.type)
             }
             className="popup-centered-input" 
             id={input.name}
@@ -37,44 +37,21 @@ export default function CenteredPopup({data,tag,active}) {
       <>
       {
         <PopupDropAnimation popupClass={'popup-centered'} active={active}>
-        <div popuptag={tag} ref={addMultiRef} >
-        {/* <div popup={param.tag} ref={ref} className={`popup-centered center popup ${accordionHeadPopupActive ? "open" : "closed"}`}> */}
+         
+        <div className={`popup-centered center popup ${className}`} data-modal={dataModal} popuptag={tag} ref={addMultiRef} >
+       
           <div className="popup-centered-container">
             <button
-              onClick={() => setModalActive(false)}
+              onClick={() =>    className === 'modal-child' ?   setChildModalActive(false) : setModalActive(false)}
               className="popup-centered-close"
             >
               <X />
             </button>
-            <h2 className="popup__title">{title}</h2>
-            <FormComp btns={<PopupBtns  form={true} cancel={btns?.cancel}  confirm={btns?.confirm} />} inputs={popInputsDOM} rest={restDOM} />
-            {/* <form onSubmit={(e) => formHandeler(e)} className="popup-centered-form">
-              <ul className="popup-centered-form__list">
-                <li className="popup-centered-form__item">
-                  <label htmlFor="popup-centered-input-name">
-                    Name
-                  </label>
-                  <input
-                    onChange={(e) =>
-                      setFormContent((oldVal) => ({
-                        ...oldVal,
-                        Name: e.target.value,
-                      }))
-                    }
-                    className="popup-centered-input"
-                    id="popup-centered-input-name"
-                    type="text"
-                    value={formContent.Name}
-                  />
-                </li>
-                {popInputsDOM}
-                {restDOM} 
-              </ul>
-            
-              
-            </form> */}
+            <h2 className="popup__title">{dataModal}</h2>
+            <FormComp btns={<PopupBtns className={className} form={true} cancel={btns?.cancel}  confirm={btns?.confirm} />} inputs={popInputsDOM} rest={restDOM} />
           </div>
         </div>
+      
       </PopupDropAnimation>
       }
       </>

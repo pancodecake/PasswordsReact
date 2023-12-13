@@ -15,6 +15,19 @@ header {
   .header-btns{
     display: flex;
     justify-content: space-between;
+    .side-popup{
+      right: -2px;
+      top: 92%;
+      
+   [data-modal="Settings move"]{
+    right: 111%;
+    top: -44%;
+  .triangle{
+    top: 12px;
+    right: 2px;
+  }
+   }
+    }
    
   }
   // .header-btns >*:last-child{
@@ -108,7 +121,7 @@ header {
       padding: 5px 16px;
       margin-right: 21px;
     }
-    input {
+    #header-input{
      
        width: 310px;
        

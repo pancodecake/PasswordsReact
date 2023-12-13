@@ -8,22 +8,19 @@ import ModalComponent, { modalsTags } from "../../components/modalComponent";
 
 
 function Card({children,data,index}) {
-  const {modalTags,useBreadcrumbs,setCurrentModal,setModalActive,modalTagRef,modal} = useGlobalContext();
-  const {setCurrentCardPopupTag,setSidePopupActive,cardPopups} = usePopupContext()
-
-  // function onClickHandle(e) {
-  //   ModalBtnHandler(e,setModalActive,setCurrentModal,modalTagRef.current?.tag)
-  // }
+  const {useBreadcrumbs,currentModal} = useGlobalContext();
+  console.log(currentModal,'currentModal');
+  // console.log(e.currentTarget.querySelector('button').classList.contains('open'),'this') + !e.currentTarget.querySelector('button').classList.contains('open') && e.preventDefault()
   return (
     <div className="card">
 
-      <NavLink  to={useBreadcrumbs() === 'category' ? '/access' : '/category'}>
+      <NavLink onClick={(e) => e.target.closest('.popup') !== null &&  e.preventDefault() }  to={useBreadcrumbs() === 'category' ? '/access' : '/category'}>
         <div className="card-head">
           <div className="card-head__box"></div>
           <h3 className="card-head__title">{  data.title }</h3>
-          {children}
+          <ModalComponent  modalComponents={data.popups} modalData={data.popupsData} btnContent={data.modalbtnContent} />
           {/* <ModalComponent /> */}
-          {/* <button popuptag={modalTagRef.current?.tag} onClick={(e) => onClickHandle(e)} className="more-btn btn-modal"><data.modalBtnSvg/></button>  */}
+          {/* <button popuptag={modalTagRef.current?.tag} onClick={(e) => onClickHandle(e)} className="more-btn btn-modal"><data.modalbtnContent/></button>  */}
         </div>
         <div className="card-owner">
           <h4 className="card-owner__title">Owner</h4>
