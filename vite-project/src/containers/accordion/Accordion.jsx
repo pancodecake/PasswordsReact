@@ -23,7 +23,7 @@ function accordion(param) {
   
   usePreventDoubleRenderEffect(() => {
     active ? (accordionBodyRef.current.className += "open") : "";
-    accordionBodyRef.current.className += 'initial-render'
+    accordionBodyRef.current.className += ' initial-render'
     const timeoutId = setTimeout(() => {
       accordionBodyRef.current.classList.remove('initial-render');
     }, 100); // Adjust the delay as needed
