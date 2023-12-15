@@ -12,10 +12,12 @@ import ComponentAmounts from "../../functions/ComponentAmount";
 import useWindowWidthChange from "../../hooks/useWindowWidthChange";
 import usePreventDoubleRenderEffect from "../../hooks/usePreventDoubleRenderEffect";
 import RemoveModalAnimations from "../../hooks/RemoveModalAnimations";
+import useGlobalContext from "../../context/GlobalContext";
 
 
 
 function accordion(param) {
+  const {addMultiRef} = useGlobalContext()
   const accordionBodyRef = useRef(null);
   const accordionConRef = useRef()
   const [active, setActive] = useState(true);
@@ -50,8 +52,8 @@ function accordion(param) {
           btns={
             param.accordionComponents.has("accardionBtns") && param.accordionComponents.get("accardionBtns")
           }
-          popups={param.accordionComponents.has("popups") && param.accordionComponents.get("popups")}
-          popupsData={param.accordionComponents.get("popupsData")}
+          modals={param.accordionComponents.has("modals") && param.accordionComponents.get("modals")}
+          modalsData={param.accordionComponents.get("modalsData")}
         />
 
 

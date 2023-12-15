@@ -9,12 +9,12 @@ import { ReactComponent as Documentplus } from "@assets/documentplus.svg";
 
 import Textarea from "../components/Textarea";
 import SelectInputComp from "../components/SelectInputComp";
-import SidePopup from "../containers/popups/sidePopups/SidePopup";
-import CenteredPopup from "../containers/popups/centeredPopups/CenteredPopup";
-import DeletePopup from "../containers/popups/deletePopups/DeletePopup";
+import SideModal from "../containers/modals/SideModals/SideModal";
+import CenteredModal from "../containers/modals/CenteredModals/CenteredModal";
+import DeleteModal from "../containers/modals/DeleteModals/DeleteModal";
 
 //inputs,btns, title
-export const  centeredPopupData = {
+export const  CenteredModalData = {
     addProject:{centered:true,title:'Add project',inputs:[{type:'text',name:'Name'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Add',cancel:'Cancel'}},
     redactProject:{centered:true,title:'Redact project',inputs:[{type:'text',name:'Name'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Change',cancel:'Cancel'}},
     createPassword:{centered:true,title:'Create password',inputs:[{type:'text',name:'Name'},{type:'email',name:'Login'},{type:'password',name:'Password'},{type:'text',name:'URL'}],description:<Textarea  label={'Description'}/>,btns:{confirm:'Create',cancel:'Cancel'}},
@@ -26,13 +26,13 @@ export const  centeredPopupData = {
     dltProject:{centered:true,title:'Are you sure you wana delete the project',btns:{confirm:'CONFIRM',cancel:'CANCEL'}},
     dltPassword:{centered:true,title:'Are you sure you wana delete the password',btns:{confirm:'CONFIRM',cancel:'CANCEL'}}
   };
-// export const centeredPopupData = {
+// export const CenteredModalData = {
 //     dltSection:{tag:'dltSection',active:false,title:'Are you sure you wana delete the section',btns:{confirm:'CONFIRM',cancel:'CANCEL'}},
 //     dltProject:{tag:'dltProject',active:false,title:'Are you sure you wana delete the project',btns:{confirm:'CONFIRM',cancel:'CANCEL'}},
 //     dltPassword:{tag:'dltPassword',active:false,title:'Are you sure you wana delete the password',btns:{confirm:'CONFIRM',cancel:'CANCEL'}}
 //   }
 
- export const sidePopupData = {
+ export const SideModalData = {
    cardMove: {
      
     title: 'Card move',
@@ -61,24 +61,24 @@ export const  centeredPopupData = {
    }
  }
 
-   export const projectCardPopupData = {
+   export const projectCardmodalData = {
     title:'Project card',
     
-     redact:{svg:<SideSetting/>,title:'Redact',childPopups:{popupsData:[centeredPopupData.redactProject],popups:[CenteredPopup]}},
-     move:{svg:<DoubleArrow/>,title:'Move',childPopups:{popupsData:[sidePopupData.cardMove],popups:[SidePopup]}},
-     delete:{svg:<Bin/>,title:'Delete',childPopups:{popupsData:[centeredPopupData.dltProject],popups:[DeletePopup]}},
+     redact:{svg:<SideSetting/>,title:'Redact',childmodals:{modalsData:[CenteredModalData.redactProject],modals:[CenteredModal]}},
+     move:{svg:<DoubleArrow/>,title:'Move',childmodals:{modalsData:[SideModalData.cardMove],modals:[SideModal]}},
+     delete:{svg:<Bin/>,title:'Delete',childmodals:{modalsData:[CenteredModalData.dltProject],modals:[DeleteModal]}},
    }
-   export const SSHCardPopupData = {
+   export const SSHCardmodalData = {
     title:'SSH card',
     
-     redact:{svg:<SideSetting/>,title:'Redact',childPopups:{popupsData:[centeredPopupData.redactCategory],popups:[CenteredPopup]}},
-     delete:{svg:<Bin/>,title:'Delete',childPopups:{popupsData:[centeredPopupData.dltProject],popups:[DeletePopup]}},
+     redact:{svg:<SideSetting/>,title:'Redact',childmodals:{modalsData:[CenteredModalData.redactCategory],modals:[CenteredModal]}},
+     delete:{svg:<Bin/>,title:'Delete',childmodals:{modalsData:[CenteredModalData.dltProject],modals:[DeleteModal]}},
    }
-   export const settingsPopupData = {
+   export const settingsmodalData = {
     title:'settings',
     
-    move:{svg:<DoubleArrow/>,title:'Move',childPopups:{popupsData:[sidePopupData.settingsMove],popups:[SidePopup]}},
-    createSection:{svg:<Documentplus/>,title:'Create section',childPopups:{popupsData:[centeredPopupData.createSection],popups:[CenteredPopup]}},
+    move:{svg:<DoubleArrow/>,title:'Move',childmodals:{modalsData:[SideModalData.settingsMove],modals:[SideModal]}},
+    createSection:{svg:<Documentplus/>,title:'Create section',childmodals:{modalsData:[CenteredModalData.createSection],modals:[CenteredModal]}},
   
   }
   export const ChecklistsModalData = {
@@ -95,12 +95,12 @@ export const  centeredPopupData = {
         btns:{confirm:'Save',cancel:'Cancel'}
     }
   }
-   export const tablePopupData = {
+   export const tablemodalData = {
     title:'table',
-     move:{svg:<DoubleArrow/>,title:'Move',childPopups:{popupsData:[sidePopupData.tableMove],popups:[SidePopup]}},
-     tie:{svg:<Chain/>,title:'Tie to a category',childPopups:{popupsData:[sidePopupData.tablePasswords],popups:[SidePopup]}},
-     redact:{svg:<Key/>,title:'Redact password',childPopups:{popupsData:[centeredPopupData.redactPassword],popups:[CenteredPopup]}},
-     delete:{svg:<Bin/>,title:'Delete',childPopups:{popupsData:[centeredPopupData.dltPassword],popups:[DeletePopup]}},
+     move:{svg:<DoubleArrow/>,title:'Move',childmodals:{modalsData:[SideModalData.tableMove],modals:[SideModal]}},
+     tie:{svg:<Chain/>,title:'Tie to a category',childmodals:{modalsData:[SideModalData.tablePasswords],modals:[SideModal]}},
+     redact:{svg:<Key/>,title:'Redact password',childmodals:{modalsData:[CenteredModalData.redactPassword],modals:[CenteredModal]}},
+     delete:{svg:<Bin/>,title:'Delete',childmodals:{modalsData:[CenteredModalData.dltPassword],modals:[DeleteModal]}},
    }
   
   

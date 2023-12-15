@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import useMultiRefs from '../../../hooks/useMultiRefs'
 import useActivateModal from './useActivateModal'
-import useClosePopup from './useClosePopup'
+import useCloseModal from './useCloseModal'
 
 export default function useChildModals() {
     const [currentChildModal,setCurrentChildModal] = useState('')
@@ -12,7 +12,7 @@ export default function useChildModals() {
     const [multiRef,addMultiRef] = useMultiRefs()
     console.log(childModal,'kek',childModalActive);
     useActivateModal(childModalActive,setChildModal,currentChildModal,multiRef)
-    useClosePopup(childModalActive,setChildModalActive,multiRef)
+    useCloseModal(childModalActive,setChildModalActive,multiRef)
 
     return {currentChildModalRef,currentChildModal,setCurrentChildModal,childModal,setChildModal,childModalActive,setChildModalActive,childModalTagRef,addMultiRef}
 }

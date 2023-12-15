@@ -5,17 +5,17 @@ import { ReactComponent as PagePlusSvg } from "@assets/pageplus.svg";
 import { ReactComponent as AccLockSvg } from "@assets/acclock.svg";
 import Card from "../containers/card/Card";
 import Table from "../containers/table/Table";
-import CenteredPopup from "../containers/popups/centeredPopups/CenteredPopup";
-import { centeredPopupData } from "./popupsData";
+import CenteredModal from "../containers/modals/CenteredModals/CenteredModal";
+import { CenteredModalData } from "./modalsData";
 import { SSHCardData, projectCardData,tableData,historyTableData } from "./accordionBodyData";
-import DeletePopup from "../containers/popups/deletePopups/DeletePopup";
+import DeleteModal from "../containers/modals/DeleteModals/DeleteModal";
 
 
 const accordionContentData = {
     projects: [
       {
-        popups:[CenteredPopup,DeletePopup], 
-        popupsData:[centeredPopupData.addProject,centeredPopupData.dltSection],
+        modals:[CenteredModal,DeleteModal], 
+        modalsData:[CenteredModalData.addProject,CenteredModalData.dltSection],
         body: Card,
         bodyContent: projectCardData,
         amount: 3,
@@ -23,8 +23,8 @@ const accordionContentData = {
         accardionBtns: [[<PagePlusSvg />,`Add project`],[<TrashSvg />,`Delete project`]],
       },
       {
-        popups:[CenteredPopup,DeletePopup], 
-        popupsData:[centeredPopupData.addProject,centeredPopupData.dltSection],
+        modals:[CenteredModal,DeleteModal], 
+        modalsData:[CenteredModalData.addProject,CenteredModalData.dltSection],
         body: Card,
         bodyContent: projectCardData,
         amount: 7,
@@ -32,8 +32,8 @@ const accordionContentData = {
      accardionBtns: [[<PagePlusSvg />,`Add project`],[<TrashSvg />,`Delete project`]]
       },
       {
-        popups:[CenteredPopup,DeletePopup],
-        popupsData:[centeredPopupData.addProject,centeredPopupData.dltSection],
+        modals:[CenteredModal,DeleteModal],
+        modalsData:[CenteredModalData.addProject,CenteredModalData.dltSection],
         body: Card,
         bodyContent: projectCardData,
         amount: 3,
@@ -43,8 +43,8 @@ const accordionContentData = {
     ],
     category: [
       {
-        popups:[CenteredPopup,CenteredPopup],
-        popupsData:[centeredPopupData.createPassword,centeredPopupData.createCategory],
+        modals:[CenteredModal,CenteredModal],
+        modalsData:[CenteredModalData.createPassword,CenteredModalData.createCategory],
         body: Card,
         bodyContent: SSHCardData,
         cardTitle: "Access to page with SHSS",
@@ -53,8 +53,8 @@ const accordionContentData = {
         accardionBtns:[[<AccLockSvg />,`Create password`],[<FolderPlusSvg />,`Create category`]]
       },
       {
-        popups:[CenteredPopup],
-        popupsData:[],
+        modals:[CenteredModal],
+        modalsData:[],
         body: Table,
         bodyContent: tableData,
         amount: 1,
@@ -64,8 +64,8 @@ const accordionContentData = {
     ],
     access: [
       {
-        popups:[CenteredPopup],
-        popupsData:[centeredPopupData.createPassword],
+        modals:[CenteredModal],
+        modalsData:[CenteredModalData.createPassword],
         body: Table,
         bodyContent: tableData,
         amount: 1,
@@ -74,8 +74,8 @@ const accordionContentData = {
        
       },
       {
-        popups:[CenteredPopup],
-        popupsData:[],
+        modals:[CenteredModal],
+        modalsData:[],
         body: Table,
         bodyContent: tableData,
         amount: 1,

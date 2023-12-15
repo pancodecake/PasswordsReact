@@ -4,14 +4,14 @@
 @import "../containers/header/header"; 
 @import "../containers/table/table"; 
 @import "../containers/accordion/accordion";
-@import "../containers/popups/centeredPopups/centeredpopup";
-@import "../containers/popups/deletePopups/deletepopup";
-@import "../containers/popups/sidePopups/sidePopup";
+@import "../containers/modals/CenteredModals/CenteredModal";
+@import "../containers/modals/DeleteModals/DeleteModal";
+@import "../containers/modals/SideModals/SideModal";
+@import "../containers/modals/checklistModals/checkList";
 @import "../containers/card/card";
-@import "./components/checkList";
 @import "./components/headerDesc";
 @import "./components/selectInvite";
-@import "./components/popup";
+@import "./components/modal";
 @import "./global/_mediaQuery";
 
 

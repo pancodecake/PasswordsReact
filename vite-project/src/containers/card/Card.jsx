@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import useGlobalContext from "../../context/GlobalContext";
 import { NavLink, Link } from "react-router-dom";
-import ModalComponent from "../popups/components/ModalComponent";
+import ModalComponent from "../modals/components/ModalComponent";
 
 
 
@@ -11,11 +11,11 @@ function Card({ children, data, index }) {
   return (
     <div className="card">
 
-      <NavLink onClick={(e) => e.target.closest('.popup') !== null && e.preventDefault()} to={useBreadcrumbs() === 'category' ? '/access' : '/category'}>
+      <NavLink onClick={(e) => e.target.closest('.modal') !== null && e.preventDefault()} to={useBreadcrumbs() === 'category' ? '/access' : '/category'}>
         <div className="card-head">
           <div className="card-head__box"></div>
           <h3 className="card-head__title">{data.title}</h3>
-          <ModalComponent modalComponents={data.popups} modalData={data.popupsData} btnContent={data.modalbtnContent} />
+          <ModalComponent modalComponents={data.modals} modalData={data.modalsData} btnContent={data.modalbtnContent} />
 
 
         </div>

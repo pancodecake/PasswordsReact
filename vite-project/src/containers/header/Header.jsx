@@ -8,12 +8,12 @@ import Sections from "../../components/Sections";
 import LastPageStyle from "./functions/LastPageTrans.js";
 import usePreventDoubleRenderEffect from "../../hooks/usePreventDoubleRenderEffect.jsx";
 import { navBtnDataMap } from "../../data/headerData.jsx";
-import HeaderModals from "./functions/HeaderModals.jsx";
 import HeaderBtns from "./components/HeaderBtns.jsx";
+import HeaderModals from "./functions/HeaderModals.jsx";
 
 function Header(param) {
   const { useBreadcrumbs } = useGlobalContext();
-  const [accordionHeadPopupActive, setAccordionHeadPopupActive] = useState(false);
+  const [accordionHeadmodalActive, setAccordionHeadmodalActive] = useState(false);
   const location = useBreadcrumbs();
   const prevTitleRef = useRef();
   const pagesRef = useRef();
@@ -63,7 +63,7 @@ function Header(param) {
       <main>
 
         <Outlet
-          context={{ Sections, accordionHeadPopupActive, setAccordionHeadPopupActive }}
+          context={{ Sections, accordionHeadmodalActive, setAccordionHeadmodalActive }}
         />
       </main>
     </>

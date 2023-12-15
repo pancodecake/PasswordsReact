@@ -4,10 +4,10 @@ import { ReactComponent as DocumentCopySvg } from "@assets/documentcopy.svg";
 import { ReactComponent as EyeSvg } from "@assets/eye.svg";
 import { ReactComponent as TableTitleSvg } from "@assets/tableTitle.svg";
 import { ReactComponent as HideEye } from "@assets/hideeye.svg";
-import { SSHCardPopupData,projectCardPopupData, tablePopupData } from "./popupsData";
-import DeletePopup from "../containers/popups/deletePopups/DeletePopup";
-import CenteredPopup from "../containers/popups/centeredPopups/CenteredPopup";
-import SidePopup from "../containers/popups/sidePopups/SidePopup";
+import { SSHCardmodalData,projectCardmodalData, tablemodalData } from "./modalsData";
+import DeleteModal from "../containers/modals/DeleteModals/DeleteModal";
+import CenteredModal from "../containers/modals/CenteredModals/CenteredModal";
+import SideModal from "../containers/modals/SideModals/SideModal";
 
 
 export const tableData = {
@@ -26,8 +26,8 @@ export const tableData = {
     url: "https://lk.skillline.ru/",
     date: "2020-01-01",
     moreBtn:  <MoreSvg />,
-    popups:[SidePopup],
-    popupsData:[tablePopupData]
+    modals:[SideModal],
+    modalsData:[tablemodalData]
   
   
   };
@@ -46,15 +46,15 @@ export const tableData = {
     owner: "Mark Pancake",
     date: "2020-01-01",
     modalbtnContent: <MoreSvg/>,
-    popupBtn:{name:'copy',svg:<DocumentCopySvg />},
-    popups:[SidePopup],
-    popupsData:[projectCardPopupData]
+    modalBtn:{name:'copy',svg:<DocumentCopySvg />},
+    modals:[SideModal],
+    modalsData:[projectCardmodalData]
   };
   export const SSHCardData = {
     title: "Access website trough SSH",
     owner: "Mark Pancake",
     date: "2020-01-01",
     modalbtnContent: <MoreSvg/>,
-    popups:[SidePopup],
-    popupsData:[SSHCardPopupData]
+    modals:[SideModal],
+    modalsData:[SSHCardmodalData]
   };

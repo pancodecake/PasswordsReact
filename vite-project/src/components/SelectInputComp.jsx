@@ -6,7 +6,7 @@ import AddPersonalLayout from "../layouts/AddPersonalLayout";
 function SelectInputComp() {
   const [activeModal,setActiveModal] = useState(false)
   return (
-    <div className="popup-centered-input select-input">
+    <div className="modal-centered-input select-input">
       <div className="select-input__con">
       <h4 className="select-input__title ">+ Add personal</h4>
       <button onClick={() => setActiveModal(oldVal => !oldVal)} className={`select-input__btn arrow ${activeModal ? 'active' : ''}`}>

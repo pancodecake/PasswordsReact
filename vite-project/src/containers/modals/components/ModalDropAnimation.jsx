@@ -2,15 +2,18 @@ import React from 'react'
 import { motion,AnimatePresence } from "framer-motion"
 
 
-export default function PopupDropAnimation({children,active,popupClass}) {
-    const popupDropIn = {
+export default function ModalDropAnimation({children,active,modalClass}) {
+    const modalDropIn = {
         hidden: {
           y: "-100vh",
           opacity: 0,
         },
         visible: {
+          position:'fixed',
           y: "0",
           opacity: 1,
+          top:'25%',
+          left:'35%',
           transition: {
             duration: 0.1,
             type: "spring",
@@ -30,8 +33,8 @@ export default function PopupDropAnimation({children,active,popupClass}) {
     initial="hidden"
     animate="visible"
     exit="exit"
-    variants={popupDropIn}
-    // className={`${popupClass}  center popup `}
+    variants={modalDropIn}
+    // className={`${modalClass}  center modal `}
     >
     { children}
     </motion.div>}

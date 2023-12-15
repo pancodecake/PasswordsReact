@@ -1,7 +1,7 @@
 import React, { useRef, useImperativeHandle } from "react";
 import { ReactComponent as MoreSvg } from "@assets/icon-more.svg";
 import useTablePassword from "../hooks/useTablePassword";
-import ModalComponent from "../../popups/components/ModalComponent";
+import ModalComponent from "../../modals/components/ModalComponent";
 
 
 
@@ -31,7 +31,7 @@ function TableRow({ ...props }, ref) {
     <div className="table-row ">
       <div className="table-row__con ">
         {tableTitleDOM} 
-         <ModalComponent  modalComponents={props.popups} modalData={props.popupsData} btnContent={props.moreBtn} /> 
+         <ModalComponent  modalComponents={props.modals} modalData={props.modalsData} btnContent={props.moreBtn} /> 
       </div>
     </div>
   );

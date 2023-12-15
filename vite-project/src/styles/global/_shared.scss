@@ -1,7 +1,6 @@
 body{
   overflow-x: hidden;
-}
-#root{
+  
   background:-moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
 
   /* safari 5.1+,chrome 10+ */
@@ -35,10 +34,10 @@ $light: rgba(250, 245, 245,1);
 $color-black: #000000;
 $color-blue: #2FC6F6;
 $color-gray: #A8ADB4;
-$sidepopup-gray:#DBDCDE;
+$SideModal-gray:#DBDCDE;
 $color-blue-light: #C6EEFC;
 $dark: rgb(19, 19, 19);
-.popup-container{
+.modal-container{
   position: relative;
 }
 // .modal{
@@ -64,8 +63,8 @@ button{
   position: fixed!important;
    top: 50%;
    left: 50%;
-  //  translate: -50% -50%;
-  translate: -50% -100vh;
+    translate: -50% -50%;
+  // translate: -50% -100vh;
   background-color: rgb(19, 19, 19);
   box-shadow: 0px 6px 21px rgba(83, 92, 105, 0.15);
   padding: 15px 22px;

@@ -14,7 +14,7 @@ import TableTitles from "./components/TableTitles";
 
 function Table({data}) {
 
-  const { headTitles,moreBtn,popups,popupsData, ...rowItems } = data;
+  const { headTitles,moreBtn,modals,modalsData, ...rowItems } = data;
   const tableRowTitleRef = useRef([]);
   const tableHeadTitleRef = useRef([]);
   const tablePagionationDOM = [];
@@ -32,7 +32,7 @@ function Table({data}) {
   }
   for (let i = 0; i < 5; i++) {
     tableRowsDOM.push(
-      <TableRow key={i} moreBtn={moreBtn} popups={popups} popupsData={popupsData} ref={tableRowTitleRef} rowItems={rowItems} />
+      <TableRow key={i} moreBtn={moreBtn} modals={modals} modalsData={modalsData} ref={tableRowTitleRef} rowItems={rowItems} />
     );
   }
 

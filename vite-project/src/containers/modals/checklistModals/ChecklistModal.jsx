@@ -1,9 +1,9 @@
 import React from "react";
-import { ChecklistsModalData } from "../data/popupsData";
-import FormComp from "./FormComp";
-import PopupBtns from "../containers/popups/components/PopupBtns";
-import useFormData from "../hooks/useFormData";
-import useGlobalContext from "../context/GlobalContext";
+import { ChecklistsModalData } from "../../../data/modalsData";
+import FormComp from "../../../components/FormComp";
+import ModalBtns from "../components/modalBtns";
+import useFormData from "../../../hooks/useFormData";
+import useGlobalContext from "../../../context/GlobalContext";
 
 function ChecklistModal({ data, tag, active }) {
   const { setFormContent, formContent,add,addMultiRef } = useGlobalContext();
@@ -30,12 +30,12 @@ function ChecklistModal({ data, tag, active }) {
   });
 
   return (
-    <div tag={tag} ref={addMultiRef} className={`modal-checklist popup ${active ? 'open' : 'closed'}`}>
+    <div tag={tag} ref={addMultiRef} className={`modal-checklist modal ${active ? 'open' : 'closed'}`}>
       <div className="modal-checklist__container">
         <div className="triangle"></div>
         <div className="modal-checklist__list">
           <h3 className="modal-checklist__title">{data.title}</h3>
-          <FormComp btns={<PopupBtns form={true} cancel={data.btns?.cancel} confirm={data.btns?.confirm} />} inputs={checklistDOM} rest={null} />
+          <FormComp btns={<ModalBtns form={true} cancel={data.btns?.cancel} confirm={data.btns?.confirm} />} inputs={checklistDOM} rest={null} />
         </div>
       </div>
     </div>
