@@ -24,24 +24,52 @@ function accordion(param) {
   const compType = param.accordionComponents.get("body");
   
   usePreventDoubleRenderEffect(() => {
+;
     active ? (accordionBodyRef.current.className += "open") : "";
     accordionBodyRef.current.className += ' initial-render'
     const timeoutId = setTimeout(() => {
+
       accordionBodyRef.current.classList.remove('initial-render');
     }, 100); // Adjust the delay as needed
 
     // Cleanup on unmount
     return () => clearTimeout(timeoutId);
-  }, [active]);
-  usePreventDoubleRenderEffect(() => {
-    console.log(accordionBodyRef ,'accordionBodyRef ');
-    setTimeout(() => {
+  }, []);
+
+  useEffect(() => {
+    function afterDocumentReady() {
+      console.log('Document is ready');
       accordionBodyRef
-        ? (accordionBodyRef.current.style.height = `${accordionConRef.current.getBoundingClientRect().height
-          }px`)
-        : (accordionBodyRef.current.style.heigh = "unset");
-    }, 1000);
+      ? (accordionBodyRef.current.style.height = `${accordionConRef.current.getBoundingClientRect().height
+        }px`)
+      : (accordionBodyRef.current.style.heigh = "unset");
+    }
+
+    // Check if the document is already in the 'complete' state
+    if (document.readyState === 'complete') {
+      afterDocumentReady();
+    } else {
+      // Attach an event listener for the 'readystatechange' event
+      const handleReadyStateChange = () => {
+        if (document.readyState === 'complete') {
+          // Document is ready, execute the function
+          afterDocumentReady();
+
+          // Cleanup: Remove the event listener
+          document.removeEventListener('readystatechange', handleReadyStateChange);
+        }
+      };
+
+      // Attach the event listener
+      document.addEventListener('readystatechange', handleReadyStateChange);
+
+      // Cleanup function to remove the event listener when the component is unmounted
+      return () => {
+        document.removeEventListener('readystatechange', handleReadyStateChange);
+      };
+    }
   }, [useWindowWidthChange()]);
+
   return (
     <>
       <div className="accordion">

@@ -25,6 +25,15 @@ body{
   top: 1px;
   z-index: 999;
 }
+.cover-dark .open{
+  opacity: 0.3;
+  pointer-events: auto;
+}
+.cover-dark .closed{
+  opacity: 0;
+  pointer-events: none;
+
+}
 $red:  rgba(178, 0, 0, 1) ;
 $white : rgba(255, 255, 255, 1);
 $blue:  #0063C6 ;
@@ -218,7 +227,7 @@ button{
   }
 }
 .initial-render {
-  animation: none !important;
+
   opacity: 0;
 }
 

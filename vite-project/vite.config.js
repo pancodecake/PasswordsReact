@@ -15,6 +15,7 @@ export default defineConfig({
     devSourcemap:true,//will help with sass
   },
   server: {
+    port:5000,
     watch: {
       ignored: ['!**/node_modules/your-package-name/**'],
       //use this when problems with reload

@@ -9,6 +9,7 @@ export default function FormComp({btns,inputs,rest = null}) {
         setFormActive(true)
       }
         return (
+          <>
           <form onSubmit={(e) => formHandeler(e)} className="form">
           <ul className="form__list">
             {inputs}
@@ -16,6 +17,8 @@ export default function FormComp({btns,inputs,rest = null}) {
           </ul>
             {btns}
         </form>
+       
+        </>
         )
       
 }

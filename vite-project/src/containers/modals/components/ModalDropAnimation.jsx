@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import { motion,AnimatePresence } from "framer-motion"
 
 
+
+
 export default function ModalDropAnimation({children,active,modalClass}) {
+
     const modalDropIn = {
         hidden: {
           y: "-100vh",
@@ -10,10 +13,11 @@ export default function ModalDropAnimation({children,active,modalClass}) {
         },
         visible: {
           position:'fixed',
-          y: "0",
+          y: 0,
           opacity: 1,
           top:'25%',
           left:'35%',
+          zIndex:1000,
           transition: {
             duration: 0.1,
             type: "spring",

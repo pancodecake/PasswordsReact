@@ -11,9 +11,7 @@ $addRotate:$rotate + 0;
     
      animation: 0.3s accordionOpen;
 }
-.accordion__body{
-    animation: none;
-}
+
 .select-input__item{
     animation: none;
 }
@@ -67,6 +65,7 @@ $addRotate:$rotate + 0;
     }
 
    .modal.open{
+    opacity: 1;
        -webkit-animation: scale-up-center 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
        animation: scale-up-center 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
    }
@@ -76,6 +75,7 @@ $addRotate:$rotate + 0;
    }
 .cover-dark.on{
     opacity: 0.2;
+    pointer-events: auto;
 }
 .cover-dark.off{
     opacity: 0;

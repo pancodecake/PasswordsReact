@@ -6,7 +6,7 @@ import useBreadcrumbs from "../hooks/useBreadcrumbs";
 import useSaveLocal from "../hooks/useSaveLocal";
 import useModals from "../containers/modals/hooks/useModals";
 import useChildModals from "../containers/modals/hooks/useChildModals";
-import InitialRenderAnimation from "../functions/InitialRenderAnimation";
+
 
 
 
@@ -16,7 +16,7 @@ export const MainProvider = ({ children }) => {
   const [formActive,setFormActive] = useState(false)
   const [formContent,setFormContent] = useSaveLocal({})
     // InitialRenderAnimation(useModals().multiRef)
-
+  console.log(formContent,'formContent');
 
 
 

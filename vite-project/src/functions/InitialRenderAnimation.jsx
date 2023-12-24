@@ -5,7 +5,7 @@ export default function InitialRenderAnimation(multiRef) {
     
     useEffect(() => {
         const elements = multiRef();
-        console.log(elements,'elements');
+       
         // Add the 'initial-render' class to each element in the array
         elements.forEach((element) => {
           element.classList.add('initial-render');

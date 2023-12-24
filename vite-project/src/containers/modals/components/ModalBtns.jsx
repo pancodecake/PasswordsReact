@@ -5,10 +5,9 @@ import useGlobalContext from '../../../context/GlobalContext'
 
 export default function ModalBtns(props) {
   const { setModalActive,setChildModalActive,modalActive,childModalActive } = useGlobalContext();
-  // const { setAccordionHeadmodalActive } = usemodalContext();
-  // let {setAccordionHeadmodalActive} = CenteredModal
+
     const {confirm,cancel,form} = props
-console.log(props.className,modalActive,childModalActive,'modalActive,childModalActive');
+
 
   return (
     <div className="modal__btns">

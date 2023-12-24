@@ -33,6 +33,8 @@ export default function ModalComponent({ modalComponents, modalData = {}, btnCon
           {btnContent.length > 1 ? btnContent[i] : btnContent}
         </button>
         {centered ?
+            
+              
           createPortal(
             <ModalComponents
               className={'modal-main'}

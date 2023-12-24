@@ -1,8 +1,13 @@
+.accordion-height{
+  height: 0!important;
+  animation: none!important;
+}
 .accordion {
   &__body {
     transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
     height: max-content;
     // transition:  transform 0.3s ease-in-out
+    animation: none
   }
   &-arrow {
     svg {

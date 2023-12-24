@@ -6,7 +6,7 @@ import ModalComponent from "../../modals/components/ModalComponent";
 
 
 function TableRow({ ...props }, ref) {
-  console.log(props.rowItems,'props.rowItems.password');
+
     // let {password,btns} = props.rowItems.password
     
    const tableTitleDOM = Object.values(props.rowItems).map((item, i) => {

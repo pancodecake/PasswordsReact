@@ -1,9 +1,9 @@
 .modal{
-  
+    
     position: absolute;
-
+    transition: opacity ease-in-out 0.3s;
     z-index: 100;
-
+    opacity: 0;
 
     border-radius: 10px;
   
@@ -15,7 +15,9 @@
     &__btns {
       display: flex;
       justify-content: center;
+     
       &__btn {
+        cursor: pointer;
         padding: 10px 15px;
         font-size: 12px;
         font-weight: 700;

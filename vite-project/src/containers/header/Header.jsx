@@ -10,9 +10,10 @@ import usePreventDoubleRenderEffect from "../../hooks/usePreventDoubleRenderEffe
 import { navBtnDataMap } from "../../data/headerData.jsx";
 import HeaderBtns from "./components/HeaderBtns.jsx";
 import HeaderModals from "./functions/HeaderModals.jsx";
-
-function Header(param) {
-  const { useBreadcrumbs } = useGlobalContext();
+import DarkCover from "../../components/DarkCover.jsx";
+import { createPortal } from 'react-dom';
+function Header() {
+  const { useBreadcrumbs,darkCoverActive } = useGlobalContext();
   const [accordionHeadmodalActive, setAccordionHeadmodalActive] = useState(false);
   const location = useBreadcrumbs();
   const prevTitleRef = useRef();
@@ -38,7 +39,9 @@ function Header(param) {
   }, [location]);
 
   return (
+    
     <>
+       {createPortal(<DarkCover active={darkCoverActive}/>,document.body)}
       <header className="header">
         <div className="header-con">
           <div ref={pagesRef} className="header-pages">

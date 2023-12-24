@@ -11,7 +11,9 @@ letter-spacing: 0px;
 
 
 .modal-centered {
-  // width:clamp(50% ,500px, 80%);
+  background-color: rgb(19, 19, 19);
+  box-shadow: 0px 6px 21px rgba(83, 92, 105, 0.15);
+  padding: 15px 22px;
   width: 500px;
 
   .form__item{

@@ -7,7 +7,7 @@ import ModalComponent from "../modals/components/ModalComponent";
 
 function Card({ children, data, index }) {
   const { useBreadcrumbs, currentModal } = useGlobalContext();
-  console.log(currentModal, 'currentModal');
+
   return (
     <div className="card">
 

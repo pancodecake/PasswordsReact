@@ -12,10 +12,11 @@ import SelectInputComp from "../components/SelectInputComp";
 import SideModal from "../containers/modals/SideModals/SideModal";
 import CenteredModal from "../containers/modals/CenteredModals/CenteredModal";
 import DeleteModal from "../containers/modals/DeleteModals/DeleteModal";
+import DropBox from "../components/DropBox";
 
 //inputs,btns, title
 export const  CenteredModalData = {
-    addProject:{centered:true,title:'Add project',inputs:[{type:'text',name:'Name'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Add',cancel:'Cancel'}},
+    addProject:{DropBox:DropBox,centered:true,title:'Add project',inputs:[{type:'text',name:'Name'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Add',cancel:'Cancel'}},
     redactProject:{centered:true,title:'Redact project',inputs:[{type:'text',name:'Name'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Change',cancel:'Cancel'}},
     createPassword:{centered:true,title:'Create password',inputs:[{type:'text',name:'Name'},{type:'email',name:'Login'},{type:'password',name:'Password'},{type:'text',name:'URL'}],description:<Textarea  label={'Description'}/>,btns:{confirm:'Create',cancel:'Cancel'}},
     redactPassword: {centered:true,title:'Redact password',inputs:[{type:'text',name:'Name'},{type:'password',name:'Password'},{type:'text',name:'URL'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Change',cancel:'Cancel'}},

@@ -10,9 +10,9 @@ export default function useChildModals() {
     const childModalTagRef = useRef()
     const currentChildModalRef = useRef([])
     const [multiRef,addMultiRef] = useMultiRefs()
-    console.log(childModal,'kek',childModalActive);
+    const [darkCoverActive,setDarkCoverActive] = useState(false)
     useActivateModal(childModalActive,setChildModal,currentChildModal,multiRef)
     useCloseModal(childModalActive,setChildModalActive,multiRef)
 
-    return {currentChildModalRef,currentChildModal,setCurrentChildModal,childModal,setChildModal,childModalActive,setChildModalActive,childModalTagRef,addMultiRef}
+    return {darkCoverActive,setDarkCoverActive,currentChildModalRef,currentChildModal,setCurrentChildModal,childModal,setChildModal,childModalActive,setChildModalActive,childModalTagRef,addMultiRef}
 }

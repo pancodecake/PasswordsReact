@@ -20,7 +20,7 @@ function Table({data}) {
   const tablePagionationDOM = [];
   const tableRowsDOM = [];
   const extraRowItem = moreBtn ? [moreBtn].length : 0
-  console.log(headTitles,rowItems,extraRowItem.length,'rowItemsmoreBtn');
+
   const titleRowEquality = Object.values(headTitles).length ===  Object.values(rowItems).length + extraRowItem
   TableTitleWidth(tableRowTitleRef.current,tableHeadTitleRef.current,titleRowEquality)
   for (let i = 0; i < 8; i++) {
