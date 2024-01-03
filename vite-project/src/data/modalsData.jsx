@@ -10,19 +10,19 @@ import { ReactComponent as Documentplus } from "@assets/documentplus.svg";
 import Textarea from "../components/Textarea";
 import SelectInputComp from "../components/SelectInputComp";
 import SideModal from "../containers/modals/SideModals/SideModal";
-import CenteredModal from "../containers/modals/CenteredModals/CenteredModal";
 import DeleteModal from "../containers/modals/DeleteModals/DeleteModal";
-import DropBox from "../components/DropBox";
+import DropBox from "../containers/dropbox/DropBox";
+import CenteredModal from "../containers/modals/centeredModals/CenteredModal";
 
 //inputs,btns, title
 export const  CenteredModalData = {
-    addProject:{DropBox:DropBox,centered:true,title:'Add project',inputs:[{type:'text',name:'Name'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Add',cancel:'Cancel'}},
-    redactProject:{centered:true,title:'Redact project',inputs:[{type:'text',name:'Name'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Change',cancel:'Cancel'}},
-    createPassword:{centered:true,title:'Create password',inputs:[{type:'text',name:'Name'},{type:'email',name:'Login'},{type:'password',name:'Password'},{type:'text',name:'URL'}],description:<Textarea  label={'Description'}/>,btns:{confirm:'Create',cancel:'Cancel'}},
-    redactPassword: {centered:true,title:'Redact password',inputs:[{type:'text',name:'Name'},{type:'password',name:'Password'},{type:'text',name:'URL'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Change',cancel:'Cancel'}},
-    createCategory: {centered:true,title:'Create category',inputs:[{type:'text',name:'Name'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Save',cancel:'Cancel'}},
-    redactCategory: {centered:true,title:'Create category',inputs:[{type:'text',name:'Name'}],description:<Textarea  label={'Description'}/>,select:<SelectInputComp/>,btns:{confirm:'Change',cancel:'Cancel'}},
-    createSection: {centered:true,title:'Create section',inputs:[{type:'text',name:'Name'}],select:<SelectInputComp/>,btns:{confirm:'Create'}},
+    addProject:{centered:true,title:'Add project',inputs:[{type:'text',name:'Name'}],description:Textarea,select:SelectInputComp,dropBox:DropBox,btns:{confirm:'Add',cancel:'Cancel'}},
+    redactProject:{centered:true,title:'Redact project',inputs:[{type:'text',name:'Name'}],description:Textarea,select:SelectInputComp,btns:{confirm:'Change',cancel:'Cancel'}},
+    createPassword:{centered:true,title:'Create password',inputs:[{type:'text',name:'Name'},{type:'email',name:'Login'},{type:'password',name:'Password'},{type:'text',name:'URL'}],description:Textarea,btns:{confirm:'Create',cancel:'Cancel'}},
+    redactPassword: {centered:true,title:'Redact password',inputs:[{type:'text',name:'Name'},{type:'password',name:'Password'},{type:'text',name:'URL'}],description:Textarea,select:SelectInputComp,btns:{confirm:'Change',cancel:'Cancel'}},
+    createCategory: {centered:true,title:'Create category',inputs:[{type:'text',name:'Name'}],description:Textarea,select:SelectInputComp,btns:{confirm:'Save',cancel:'Cancel'}},
+    redactCategory: {centered:true,title:'Create category',inputs:[{type:'text',name:'Name'}],description:Textarea,select:SelectInputComp,btns:{confirm:'Change',cancel:'Cancel'}},
+    createSection: {centered:true,title:'Create section',inputs:[{type:'text',name:'Name'}],select:SelectInputComp,btns:{confirm:'Create'}},
     dltSection:{centered:true,title:'Are you sure you wana delete the section',btns:{confirm:'CONFIRM',cancel:'CANCEL'}},
     dltProject:{centered:true,title:'Are you sure you wana delete the project',btns:{confirm:'CONFIRM',cancel:'CANCEL'}},
     dltPassword:{centered:true,title:'Are you sure you wana delete the password',btns:{confirm:'CONFIRM',cancel:'CANCEL'}}

@@ -1,0 +1,150 @@
+.dropbox{
+    padding: 0 1rem;
+  &__input{
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+    &-form{
+        border: none;
+        display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 122px;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  color: #a8adb4;
+  outline: 2px dashed #c6cdd3;
+  cursor: pointer;
+  svg{
+    margin-bottom: 5px;
+  }
+    }
+    &-item{
+        background-color: rgba(255, 255, 255, 0.1490196078);
+  border-radius: 6px;
+  margin-bottom: 18px;
+  padding: 7px 10px;
+  &__details-con{
+    display: flex;
+    align-items: center;
+  }
+  .drop-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+    height: 122px;
+
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+    color: $light;
+    outline: 2px dashed #c6cdd3;
+    cursor: pointer;
+   
+  }
+  .drop-con{
+    padding: 0 1rem;
+  }
+  &__folder-img{
+    margin-right: 12px;
+    user-select: none;
+  }
+
+  .dropCon-folderImg{
+    margin-right: 10px;
+  }
+  &__con{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__details{
+  
+  
+  }
+  &__name{
+    font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: $light;
+  margin-right: 10px;
+
+
+  }
+  & :where(dropbox-item__size,dropbox-item__status){
+    font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #848B94;
+  white-space: nowrap;
+  }
+  &{
+    img{
+      width: 20px!important;
+      height: 16px!important;
+    }
+  }
+  &__status{
+
+
+  }
+  &__size{
+    margin-right: 10px;
+    border-bottom: 1px solid $light;
+  }
+  &__status.finished > &__dlt{
+    opacity: 1;
+    position: unset;
+  }
+  &.finished > &__progress{
+    opacity: 0;
+    position: absolute;
+  }
+  &__dlt{
+    background-image: url('../img/icon-bin.svg');
+    background-color: none;
+    height: 11px;
+    width: 11px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    opacity: 0;
+  position: absolute;
+  }
+  &__progress{
+    width: 71%;
+    height: 4px;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    border: none;
+    margin-right: 5px;
+  
+  }
+  
+  &__progress::-webkit-progress-bar{
+    background-color: #2FC6F6;
+    width: 100%;
+    height: 4px;
+  }
+  &__progress::-webkit-progress-value{
+    background-color: #2FC6F6;
+    width: 100px;
+    height: 20px;
+  }
+    }
+
+
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useId, useRef } from "react";
+import React, { useEffect, useState,useId, useRef,portal } from "react";
 import { ReactComponent as X } from "@assets/X.svg";
 import useGlobalContext from "../../../context/GlobalContext";
 import useFormData from "../../../hooks/useFormData";
@@ -17,8 +17,9 @@ export default function CenteredModal({data,tag,active,dataModal,className}) {
   },[active])
   if (data) {
     const { inputs,btns,centered, title, ...rest } = data 
-    const restDOM = Object.values(rest).map((el,i) => {
-      return (<li key={i} className="form__item">{el}</li>)
+    const restDOM = Object.values(rest).map((Comp,i) => {
+        console.log(Comp,'Comp');
+      return (<li key={i} className="form__item">{<Comp/>}</li>)
     })
     const popInputsDOM = inputs?.map((input,i) => {
       const labelId = useId()
@@ -54,7 +55,7 @@ export default function CenteredModal({data,tag,active,dataModal,className}) {
             </button>
             <h2 className="modal__title">{dataModal}</h2>
             
-            <FormComp  btns={<ModalBtns className={className} form={true} cancel={btns?.cancel}  confirm={btns?.confirm} />} inputs={popInputsDOM} rest={restDOM} />
+            <FormComp  btns={<ModalBtns className={className} form={true} cancel={btns?.cancel}   confirm={btns?.confirm} />} inputs={popInputsDOM} rest={restDOM} />
         
           </div>
         </div>

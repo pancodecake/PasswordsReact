@@ -5,10 +5,10 @@ import { ReactComponent as PagePlusSvg } from "@assets/pageplus.svg";
 import { ReactComponent as AccLockSvg } from "@assets/acclock.svg";
 import Card from "../containers/card/Card";
 import Table from "../containers/table/Table";
-import CenteredModal from "../containers/modals/CenteredModals/CenteredModal";
 import { CenteredModalData } from "./modalsData";
 import { SSHCardData, projectCardData,tableData,historyTableData } from "./accordionBodyData";
 import DeleteModal from "../containers/modals/DeleteModals/DeleteModal";
+import CenteredModal from "../containers/modals/centeredModals/CenteredModal";
 
 
 const accordionContentData = {

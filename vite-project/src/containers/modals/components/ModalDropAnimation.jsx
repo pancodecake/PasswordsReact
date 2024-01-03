@@ -15,7 +15,7 @@ export default function ModalDropAnimation({children,active,modalClass}) {
           position:'fixed',
           y: 0,
           opacity: 1,
-          top:'25%',
+          top:'1%',
           left:'35%',
           zIndex:1000,
           transition: {

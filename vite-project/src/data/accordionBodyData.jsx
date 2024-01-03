@@ -5,8 +5,6 @@ import { ReactComponent as EyeSvg } from "@assets/eye.svg";
 import { ReactComponent as TableTitleSvg } from "@assets/tableTitle.svg";
 import { ReactComponent as HideEye } from "@assets/hideeye.svg";
 import { SSHCardmodalData,projectCardmodalData, tablemodalData } from "./modalsData";
-import DeleteModal from "../containers/modals/DeleteModals/DeleteModal";
-import CenteredModal from "../containers/modals/CenteredModals/CenteredModal";
 import SideModal from "../containers/modals/SideModals/SideModal";
 
 

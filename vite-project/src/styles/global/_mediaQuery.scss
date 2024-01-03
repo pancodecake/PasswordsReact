@@ -25,7 +25,7 @@
 
 @include mid {
   .modal-centered{
-    translate: -30%;
+    translate: -30% -25%;
 
   }
   #desc{
@@ -84,8 +84,16 @@ line-height: 14px
     margin-bottom: 5px;
   }
     .accordion-head__btns-con {
+      align-items: flex-start;
+
       flex-direction: column;
- 
+      border-radius: 15px;
+      padding: 10px;
+        button{
+          svg{
+            margin-left: 0;
+          }
+        }
       .accordion-head__btns__span {
         font-size: 14px;
         padding-right: 7px;

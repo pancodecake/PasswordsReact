@@ -4,6 +4,7 @@
 @import "../containers/header/header"; 
 @import "../containers/table/table"; 
 @import "../containers/accordion/accordion";
+@import "../containers/dropbox/dropbox";
 @import "../containers/modals/CenteredModals/CenteredModal";
 @import "../containers/modals/DeleteModals/DeleteModal";
 @import "../containers/modals/SideModals/SideModal";
@@ -12,7 +13,6 @@
 @import "./components/headerDesc";
 @import "./components/selectInvite";
 @import "./components/modal";
-@import "./components/dropbox";
 @import "./global/_mediaQuery";
 
 
