@@ -124,6 +124,9 @@ button{
   100%{clip-path: inset(0 0 100% 0) }
   
 }
+html{
+  height: 100%;
+}
 @keyframes accordionOpen {
   0%{clip-path: inset(0 0 100% 0) ;}
   50%{clip-path: inset(0 0 50% 0) }
