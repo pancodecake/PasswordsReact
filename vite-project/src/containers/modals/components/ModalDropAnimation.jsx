@@ -1,10 +1,20 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState,useRef } from 'react'
 import { motion,AnimatePresence } from "framer-motion"
+import useCallbackRef from '../../../hooks/useCallbackRef'
 
 
 
 
-export default function ModalDropAnimation({children,active,modalClass}) {
+export default function ModalDropAnimation({children,active}) {
+
+  const [rect,ref] = useCallbackRef()
+
+  if(rect !== null){
+    rect.style.top = ((window.innerHeight - rect.firstChild.clientHeight) / 2) + 'px'
+  }
+
+
+
 
     const modalDropIn = {
         hidden: {
@@ -15,7 +25,6 @@ export default function ModalDropAnimation({children,active,modalClass}) {
           position:'fixed',
           y: 0,
           opacity: 1,
-          top:'1%',
           left:'35%',
           zIndex:1000,
           transition: {
@@ -38,6 +47,7 @@ export default function ModalDropAnimation({children,active,modalClass}) {
     animate="visible"
     exit="exit"
     variants={modalDropIn}
+    ref={ref}
     // className={`${modalClass}  center modal `}
     >
     { children}

@@ -5,7 +5,7 @@ import path from 'path'
 //npm path
 import { readdirSync } from 'fs'
 //  import svgr from "vite-plugin-svgr";
- import svgr from '@svgr/rollup';
+import svgr from '@svgr/rollup';
 // https://vitejs.dev/config/
 
 //if a oroblem with sgr just change which one you installed
@@ -15,7 +15,7 @@ export default defineConfig({
     devSourcemap:true,//will help with sass
   },
   server: {
-    port:5000,
+    port:5031,
     watch: {
       ignored: ['!**/node_modules/your-package-name/**'],
       //use this when problems with reload

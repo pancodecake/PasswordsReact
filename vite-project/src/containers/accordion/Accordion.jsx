@@ -11,7 +11,6 @@ import AccardionHead from "./components/AccardionHead";
 import ComponentAmounts from "../../functions/ComponentAmount";
 import useWindowWidthChange from "../../hooks/useWindowWidthChange";
 import usePreventDoubleRenderEffect from "../../hooks/usePreventDoubleRenderEffect";
-import RemoveModalAnimations from "../../hooks/RemoveModalAnimations";
 import useGlobalContext from "../../context/GlobalContext";
 
 

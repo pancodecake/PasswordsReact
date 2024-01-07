@@ -3,14 +3,16 @@ import { ReactComponent as X } from "@assets/X.svg";
 import useGlobalContext from "../../../context/GlobalContext";
 import useFormData from "../../../hooks/useFormData";
 import FormComp from "../../../components/FormComp";
-import DarkCover from "../../../components/DarkCover";
+
 
 import ModalDropAnimation from "../components/ModalDropAnimation";
 import ModalBtns from "../components/ModalBtns";
 
 
+
 export default function CenteredModal({data,tag,active,dataModal,className}) {
   const {formContent,setFormContent,setModalActive,setChildModalActive,setDarkCoverActive} = useGlobalContext()
+
 
   useEffect(() => {
     setDarkCoverActive(active)
@@ -42,9 +44,9 @@ export default function CenteredModal({data,tag,active,dataModal,className}) {
     return (
       <>
       {
-        <ModalDropAnimation modalClass={'modal-centered'} active={active}>
+        <ModalDropAnimation  modalClass={'modal-centered'} active={active}>
         
-        <div className={`modal-centered ${active ? 'open' : ''}  modal ${className}`} data-modal={dataModal} modaltag={tag}  >
+        <div  className={`modal-centered ${active ? 'open' : ''}  modal ${className}`} data-modal={dataModal} modaltag={tag}  >
        
           <div className="modal-centered-container">
             <button

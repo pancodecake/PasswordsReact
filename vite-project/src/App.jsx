@@ -35,8 +35,6 @@ function App() {
   
   return (
     <>
-      {/* <img src={require('./assets/Picture.png')} alt="" />
-      <p>lol</p> */}
       <RouterProvider router={theRouter} />
     </>
   )

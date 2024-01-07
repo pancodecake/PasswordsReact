@@ -8,6 +8,7 @@ import ModalBtns from '../components/ModalBtns';
 
  function DeleteModal({data,tag,active,dataModal,className}) {
   const {setDarkCoverActive} = useGlobalContext()
+  const centeredModalRef = useRef()
   useEffect(() => {
     setDarkCoverActive(active)
   },[active])
@@ -15,7 +16,7 @@ import ModalBtns from '../components/ModalBtns';
   const {btns} =  data
  
     return (
-      <ModalDropAnimation active={active} modalClass={'modal-delete'}>
+      <ModalDropAnimation centeredModalRef={centeredModalRef} active={active} modalClass={'modal-delete'}>
       <div className={`modal-centered  ${active ? 'open' : ''}  modal ${className}`} data-modal={dataModal}  modaltag={tag}   >
         <h3 className='modal__title'>{dataModal}</h3>
         <ModalBtns className={className}  cancel={btns?.cancel} confirm={btns?.confirm} />

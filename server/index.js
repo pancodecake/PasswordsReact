@@ -1,31 +1,39 @@
+//require raw http
 const http = require('http')
-const cors = require('cors')
-const express = require('express')
+//create io server
 const { Server } = require('socket.io')
+//express is what our backend will stand on
+const express = require('express')
 const app = express()
-//cors important to fix bugs
-app.use(cors())
+//require cors
+const cors = require('cors')
 
-//create server with htpp then io,adjust cors origin and methods
+//use cors in app
+app.use(cors)
+
+//create a server with express
 const server = http.createServer(app)
+//create new server with cors object in adjust your origin front and methods
 const io = new Server(server,{
-        cors:{
-            origin:5000,
-            methods:['GET','POST']
-        }
+    cors:{
+        origin:5031,
+        methods:['GET','POST']
+    }
 })
-
-//listen to io 
-io.on('connect',socket => {
-    console.log('conneccted' + socket);
-    io.on('join_room',room => {
-        socket.join(room)
+//listen to connection and contiunse setting up listenrs insdie of it
+io.on('connection',socket => {
+    console.log(socket.id)
+    
+    socket.on('toBackMsg',data => {
+        console.log(data)
+        socket.emit('toFrontMsg',data)
     })
-    io.on('send_form_content',data => {
-        console.log(data);
-        data.broadcast.emit(data)
-    })
+    
 })
+//listen to the server and put it in a http which is not being used
+//emit to send event,on to listen to it
 
 //listen to the server
-server.listen(3003,() => console.log('server is listening'))
+server.listen('5099',() => {
+    console.log('server is listening');
+})
